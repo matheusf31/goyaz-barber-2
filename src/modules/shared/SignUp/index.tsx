@@ -6,18 +6,22 @@ import {
   View,
   ScrollView,
   TextInput,
+  Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
+import * as Yup from 'yup';
 
 import Icon from 'react-native-vector-icons/Feather';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import Background from '../../components/Background';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
+import Background from '../../../components/Background';
 
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../../assets/logo.png';
+
+import getValidationErrors from '../../../utils/getValidationErrors';
 
 import {
   Container,
@@ -26,6 +30,13 @@ import {
   BackToSignInText,
 } from './styles';
 
+interface ISignUpFormData {
+  name: string;
+  phone: string;
+  email: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
   const formRef = useRef<FormHandles>(null);
@@ -33,8 +44,35 @@ const SignUp: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const handleSignUp = useCallback((data: unknown) => {
-    console.log(data);
+  const handleSignUp = useCallback(async (data: ISignUpFormData) => {
+    try {
+      formRef.current?.setErrors({});
+
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório.'),
+        phone: Yup.string()
+          .required('Telefone obrigatório')
+          .matches(/^(6\d|06\d)(\d{4,5}-?\d{4})$/, 'Telefone inválido'),
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um email válido'),
+        password: Yup.string().min(6, 'Mínimo de 6 dígitos.'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+
+        return;
+      }
+
+      Alert.alert('Erro na autenticação!', 'Ocorreu um erro ao fazer login');
+    }
   }, []);
 
   return (
@@ -93,7 +131,7 @@ const SignUp: React.FC = () => {
                 name="password"
                 icon="lock"
                 placeholder="Senha"
-                textContentType="newPassword"
+                textContentType="none"
                 returnKeyType="send"
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />
