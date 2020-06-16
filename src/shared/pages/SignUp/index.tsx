@@ -15,13 +15,15 @@ import * as Yup from 'yup';
 
 import Icon from 'react-native-vector-icons/Feather';
 
-import Input from '../../../components/Input';
-import Button from '../../../components/Button';
-import Background from '../../../components/Background';
+import api from '../../services/api';
 
-import logoImg from '../../../assets/logo.png';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+import Background from '../../components/Background';
 
-import getValidationErrors from '../../../utils/getValidationErrors';
+import logoImg from '../../assets/logo.png';
+
+import getValidationErrors from '../../utils/getValidationErrors';
 
 import {
   Container,
@@ -39,41 +41,59 @@ interface ISignUpFormData {
 
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
+
   const formRef = useRef<FormHandles>(null);
   const phoneInputRef = useRef<TextInput>(null);
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const handleSignUp = useCallback(async (data: ISignUpFormData) => {
-    try {
-      formRef.current?.setErrors({});
+  const handleSignUp = useCallback(
+    async (data: ISignUpFormData) => {
+      try {
+        formRef.current?.setErrors({});
 
-      const schema = Yup.object().shape({
-        name: Yup.string().required('Nome obrigatório.'),
-        phone: Yup.string()
-          .required('Telefone obrigatório')
-          .matches(/^(6\d|06\d)(\d{4,5}-?\d{4})$/, 'Telefone inválido'),
-        email: Yup.string()
-          .required('E-mail obrigatório')
-          .email('Digite um email válido'),
-        password: Yup.string().min(6, 'Mínimo de 6 dígitos.'),
-      });
+        const schema = Yup.object().shape({
+          name: Yup.string().required('Nome obrigatório.'),
+          phone: Yup.string()
+            .required('Telefone obrigatório')
+            .matches(/^(6\d|06\d)(\d{4,5}-?\d{4})$/, 'Telefone inválido'),
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Digite um email válido'),
+          password: Yup.string().min(6, 'Mínimo de 6 dígitos.'),
+        });
 
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(err);
+        await schema.validate(data, {
+          abortEarly: false,
+        });
 
-        formRef.current?.setErrors(errors);
+        const { name, email, phone, password } = data;
 
-        return;
+        await api.post('/users', {
+          name,
+          email,
+          phone,
+          password,
+          provider: false,
+        });
+
+        Alert.alert('Cadastro realizado com sucesso!', 'Faça seu login.');
+
+        navigation.goBack();
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+
+          formRef.current?.setErrors(errors);
+
+          return;
+        }
+
+        Alert.alert('Erro na autenticação!', `${err.response.data.message}`);
       }
-
-      Alert.alert('Erro na autenticação!', 'Ocorreu um erro ao fazer login');
-    }
-  }, []);
+    },
+    [navigation],
+  );
 
   return (
     <Background>
