@@ -55,6 +55,8 @@ const AuthProvider: React.FC = ({ children }) => {
       ]);
 
       if (token[1] && profile[1]) {
+        api.defaults.headers.authorization = `Bearer ${token[1]}`;
+
         setAuthData({ token: token[1], profile: JSON.parse(profile[1]) });
       }
 
@@ -77,6 +79,8 @@ const AuthProvider: React.FC = ({ children }) => {
       ['@GoyazBarber:token', token],
       ['@GoyazBarber:profile', JSON.stringify(profile)],
     ]);
+
+    api.defaults.headers.authorization = `Bearer ${token}`;
 
     setAuthData({ token, profile });
   }, []);
