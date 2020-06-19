@@ -81,15 +81,15 @@ const calendarTheme = {
 interface ICalendarProps {
   date: Date;
   onChangeDate: Dispatch<SetStateAction<Date>>;
+  dateFormatted: string;
 }
 
-const Calendar: React.FC<ICalendarProps> = ({ date, onChangeDate }) => {
+const Calendar: React.FC<ICalendarProps> = ({
+  date,
+  onChangeDate,
+  dateFormatted,
+}) => {
   const [opened, setOpened] = useState(true);
-
-  const dateFormatted = useMemo(
-    () => format(date, "dd 'de' MMMM',' cccc", { locale: pt }),
-    [date],
-  );
 
   const onDayPress = useCallback(
     pressedDate => {
