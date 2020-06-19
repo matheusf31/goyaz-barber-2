@@ -35,8 +35,9 @@ interface IUser {
 interface IAuthContextData {
   profile: IUser;
   loading: boolean;
+  updateUser(profile: IUser): Promise<void>;
   signIn(credentials: ISignInCredentials): Promise<void>;
-  signOut(): void;
+  signOut(): Promise<void>;
 }
 
 const AuthContext = createContext<IAuthContextData>({} as IAuthContextData);
@@ -94,9 +95,30 @@ const AuthProvider: React.FC = ({ children }) => {
     setAuthData({} as IAuthDataState);
   }, []);
 
+  const updateUser = useCallback(
+    async (profile: IUser) => {
+      await AsyncStorage.setItem(
+        '@GoyazBarber:profile',
+        JSON.stringify(profile),
+      );
+
+      setAuthData({
+        token: authData.token,
+        profile,
+      });
+    },
+    [authData.token],
+  );
+
   return (
     <AuthContext.Provider
-      value={{ profile: authData.profile, signIn, signOut, loading }}
+      value={{
+        profile: authData.profile,
+        loading,
+        updateUser,
+        signIn,
+        signOut,
+      }}
     >
       {children}
     </AuthContext.Provider>
