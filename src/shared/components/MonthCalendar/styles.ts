@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
 export const Container = styled.View`
-  margin-top: ${Platform.OS === 'ios' ? 70 : 40}px;
-  margin-bottom: 30px;
+  margin-top: ${Platform.OS === 'ios' ? 60 : 40}px;
+  margin-bottom: 10px;
 `;
 
 export const CalendarContainer = styled.View`
