@@ -151,7 +151,7 @@ const SignUp: React.FC = () => {
                 name="password"
                 icon="lock"
                 placeholder="Senha"
-                textContentType="none"
+                textContentType="oneTimeCode"
                 returnKeyType="send"
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />

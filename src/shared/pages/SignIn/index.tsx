@@ -121,7 +121,7 @@ const SignIn: React.FC = () => {
                 icon="lock"
                 placeholder="Senha"
                 returnKeyType="send"
-                textContentType="none"
+                textContentType="oneTimeCode"
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />
 
