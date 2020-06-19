@@ -5,8 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Dashboard from '../pages/Dashboard';
-
 import NewAppointment from './newappointment.routes';
+import Profile from '../../../shared/pages/Profile';
 
 interface ITabBarIcon {
   focused: boolean;
@@ -45,6 +45,13 @@ const newAppointmentsOptions = {
   ),
 };
 
+const profileOptions = {
+  tabBarLabel: 'Perfil',
+  tabBarIcon: ({ focused }: ITabBarIcon) => (
+    <Icon name="user" size={20} color={focused ? '#ff9000' : '#fff'} />
+  ),
+};
+
 const ClientRoutes: React.FC = () => (
   <Tab.Navigator tabBarOptions={tabBarOptions}>
     <Tab.Screen
@@ -57,6 +64,7 @@ const ClientRoutes: React.FC = () => (
       component={NewAppointment}
       options={newAppointmentsOptions}
     />
+    <Tab.Screen name="Perfil" component={Profile} options={profileOptions} />
   </Tab.Navigator>
 );
 
