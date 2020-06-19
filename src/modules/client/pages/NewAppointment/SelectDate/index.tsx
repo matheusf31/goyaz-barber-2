@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { setHours, isBefore, parseISO, isAfter } from 'date-fns';
+import { setHours, isBefore, parseISO, isAfter, format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import api from '../../../../../shared/services/api';
 
@@ -110,6 +111,11 @@ const SelectDate: React.FC = () => {
     );
   }, [availableHours, selectedDay]);
 
+  const dateFormatted = useMemo(
+    () => format(selectedDay, "dd 'de' MMMM',' cccc", { locale: pt }),
+    [selectedDay],
+  );
+
   return (
     <Background>
       <Container>
@@ -140,7 +146,11 @@ const SelectDate: React.FC = () => {
 
         <ScheduleTitle>Escolha o Dia</ScheduleTitle>
 
-        <Calendar date={selectedDay} onChangeDate={setSelectedDay} />
+        <Calendar
+          date={selectedDay}
+          onChangeDate={setSelectedDay}
+          dateFormatted={dateFormatted}
+        />
 
         {morningAvailability.length === 0 &&
         afternoonAvailability.length === 0 ? (
