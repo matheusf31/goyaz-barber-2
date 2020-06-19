@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Button, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import api from '../../../../shared/services/api';
-import { useAuth } from '../../../../shared/hooks/auth';
 
 import ListAppointment from './ListAppointment';
 import ListConcludedAppointment from './ListConcludedAppointment';
@@ -34,8 +33,6 @@ export interface IAppointments {
 }
 
 const Dashboard: React.FC = () => {
-  const { signOut } = useAuth();
-
   const [appointments, setAppointments] = useState<IAppointments[]>([]);
   const [concludedAppointments, setConcludedAppointments] = useState<
     IAppointments[]
@@ -129,8 +126,6 @@ const Dashboard: React.FC = () => {
             />
           </>
         )}
-
-        {/* <Button title="Sair" onPress={signOut} /> */}
       </Container>
     </Background>
   );

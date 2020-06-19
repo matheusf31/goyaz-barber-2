@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import { Platform } from 'react-native';
 
 export const Container = styled.View`
   /** Esse valor é devido ao meu TabBottom do react navigation */
-  margin-bottom: 150px;
+  margin-bottom: ${Platform.OS === 'ios' ? 120 : 150}px;
 `;
 
 export const AppointmentCardContainer = styled.View`
