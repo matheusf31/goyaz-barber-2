@@ -1,12 +1,5 @@
-import React, {
-  SetStateAction,
-  Dispatch,
-  useMemo,
-  useCallback,
-  useState,
-} from 'react';
+import React, { SetStateAction, Dispatch, useCallback, useState } from 'react';
 import { format, parseISO } from 'date-fns';
-import pt from 'date-fns/locale/pt';
 
 import { LocaleConfig } from 'react-native-calendars';
 
