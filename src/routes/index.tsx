@@ -1,9 +1,9 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, View, Alert } from 'react-native';
 
 import AuthRoutes from '../shared/routes/auth.routes';
-import ClientRoutes from '../modules/client/routes/client.routes';
-import ProviderRoutes from '../modules/provider/routes/provider.routes';
+import ClientRoutes from '../modules/client/routes';
+import ProviderRoutes from '../modules/provider/routes';
 
 import { useAuth } from '../shared/hooks/auth';
 
@@ -16,6 +16,12 @@ const Routes: React.FC = () => {
         <ActivityIndicator size="large" color="#000" />
       </View>
     );
+  }
+
+  if (profile && profile.banned) {
+    Alert.alert('Alerta!', 'Você foi banido da aplicação.');
+
+    return <AuthRoutes />;
   }
 
   if (profile) {
