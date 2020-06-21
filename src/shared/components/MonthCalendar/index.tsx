@@ -1,4 +1,4 @@
-import React, { useMemo, SetStateAction, Dispatch } from 'react';
+import React, { useMemo } from 'react';
 import { format, addMonths, subMonths } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
@@ -13,7 +13,7 @@ import {
 
 interface IGraphsDateInputProps {
   date: Date;
-  onChangeMonth: Dispatch<SetStateAction<Date>>;
+  onChangeMonth: React.Dispatch<React.SetStateAction<Date>>;
 }
 
 const GraphsDateInput: React.FC<IGraphsDateInputProps> = ({
