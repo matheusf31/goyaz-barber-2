@@ -54,7 +54,7 @@ const profileOptions = {
 const appointmentsInfoOptions = {
   tabBarLabel: 'Caixa',
   tabBarIcon: ({ focused }: ITabBarIcon) => (
-    <Icon name="trending-up" size={20} color={focused ? '#ff9000' : '#fff'} />
+    <Icon name="dollar-sign" size={20} color={focused ? '#ff9000' : '#fff'} />
   ),
 };
 
