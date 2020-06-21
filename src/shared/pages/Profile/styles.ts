@@ -8,7 +8,7 @@ export const Container = styled.View`
 
   margin-bottom: 140px;
 
-  margin-top: ${Platform.OS === 'ios' ? 80 : 20}px;
+  margin-top: ${Platform.OS === 'ios' ? 90 : 30}px;
 
   padding: 0 30px;
 `;

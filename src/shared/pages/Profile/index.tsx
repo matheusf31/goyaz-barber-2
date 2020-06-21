@@ -11,7 +11,7 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import ImagePicker from 'react-native-image-picker';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
@@ -187,8 +187,8 @@ const Profile: React.FC = () => {
                 color="#ff9000"
                 style={{
                   position: 'absolute',
-                  bottom: -15,
-                  right: -5,
+                  bottom: -10,
+                  right: 5,
                 }}
               />
             </UserAvatarButton>
