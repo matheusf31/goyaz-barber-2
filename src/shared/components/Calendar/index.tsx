@@ -1,4 +1,4 @@
-import React, { SetStateAction, Dispatch, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 
 import { LocaleConfig } from 'react-native-calendars';
@@ -73,7 +73,7 @@ const calendarTheme = {
 
 interface ICalendarProps {
   date: Date;
-  onChangeDate: Dispatch<SetStateAction<Date>>;
+  onChangeDate: React.Dispatch<React.SetStateAction<Date>>;
   dateFormatted: string;
 }
 
