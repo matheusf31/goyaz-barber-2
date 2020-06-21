@@ -22,10 +22,10 @@ const tabBarOptions = {
     backgroundColor: '#17181d',
     marginTop: 1,
     paddingTop: 5,
-    height: Platform.OS === 'ios' ? 100 : 65,
+    height: Platform.OS === 'ios' ? '11%' : 65,
   },
   labelStyle: {
-    marginBottom: 10,
+    marginBottom: Platform.OS === 'ios' ? 15 : 6,
   },
 };
 
