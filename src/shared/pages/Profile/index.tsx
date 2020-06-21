@@ -7,7 +7,6 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -37,9 +36,7 @@ interface ProfileFormData {
 }
 
 const Profile: React.FC = () => {
-  const { profile, updateUser } = useAuth();
-
-  const navigation = useNavigation();
+  const { profile, updateUser, signOut } = useAuth();
 
   const formRef = useRef<FormHandles>(null);
 
@@ -49,7 +46,7 @@ const Profile: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
   const confirmPasswordInputRef = useRef<TextInput>(null);
 
-  const handleSignUp = useCallback(
+  const handleUpdateProfile = useCallback(
     async (data: ProfileFormData) => {
       try {
         formRef.current?.setErrors({});
@@ -104,8 +101,6 @@ const Profile: React.FC = () => {
         updateUser(response.data);
 
         Alert.alert('Perfil atualizado com sucesso!');
-
-        navigation.goBack();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -121,7 +116,7 @@ const Profile: React.FC = () => {
         );
       }
     },
-    [navigation, updateUser],
+    [updateUser],
   );
 
   const handleUpdateAvatar = useCallback(() => {
@@ -161,7 +156,7 @@ const Profile: React.FC = () => {
             Alert.alert('Foto do perfil atualizada com sucesso.');
           })
           .catch(err => {
-            Alert.alert('Erro ao atualizar foto de perfil.');
+            Alert.alert('Erro ao atualizar a foto de perfil.');
           });
       },
     );
@@ -202,7 +197,11 @@ const Profile: React.FC = () => {
               <Title>Meu perfil</Title>
             </View>
 
-            <Form initialData={profile} ref={formRef} onSubmit={handleSignUp}>
+            <Form
+              initialData={profile}
+              ref={formRef}
+              onSubmit={handleUpdateProfile}
+            >
               <Input
                 autoCapitalize="words"
                 name="name"
@@ -268,10 +267,18 @@ const Profile: React.FC = () => {
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />
 
-              <Button onPress={() => formRef.current?.submitForm()}>
+              <Button enabled onPress={() => formRef.current?.submitForm()}>
                 Atualizar
               </Button>
             </Form>
+
+            <Button
+              onPress={() => signOut()}
+              style={{ backgroundColor: '#bc3939' }}
+              enabled
+            >
+              Sair
+            </Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

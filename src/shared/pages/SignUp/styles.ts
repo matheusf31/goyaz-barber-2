@@ -12,7 +12,9 @@ export const Title = styled.Text`
   font-size: 24px;
   color: #fff;
   font-family: 'RobotoSlab-Medium';
-  margin: 64px 0 24px;
+  margin-top: 10%;
+
+  margin-bottom: 24px;
 `;
 
 export const BackToSignInButton = styled.TouchableOpacity`
