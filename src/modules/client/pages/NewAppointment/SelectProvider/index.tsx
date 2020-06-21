@@ -57,6 +57,7 @@ const SelectProvider: React.FC = () => {
               </ProviderInfo>
             </ProviderContainer>
           )}
+          contentContainerStyle={{ paddingBottom: 200 }}
         />
       </Container>
     </Background>

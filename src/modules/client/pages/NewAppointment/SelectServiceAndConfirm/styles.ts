@@ -60,14 +60,14 @@ export const ServiceInfoPriceContainer = styled.View`
   flex-direction: row;
   margin-right: 15px;
 
-  align-items: baseline;
+  align-items: center;
 `;
 
 export const ServiceInfoDurationContainer = styled.View`
   flex-direction: row;
   margin-left: 15px;
 
-  align-items: baseline;
+  align-items: center;
 `;
 
 export const ServiceInfoText = styled.Text<IServiceNameProps>`
