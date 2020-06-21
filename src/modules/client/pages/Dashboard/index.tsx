@@ -4,8 +4,8 @@ import { useIsFocused } from '@react-navigation/native';
 
 import api from '../../../../shared/services/api';
 
-import ListAppointment from './ListAppointment';
-import ListConcludedAppointment from './ListConcludedAppointment';
+import AppointmentCard from './AppointmentCard';
+import ConcludedAppointmentCard from './ConcludedAppointmentCard';
 
 import Background from '../../../../shared/components/Background';
 import MonthCalendar from '../../../../shared/components/MonthCalendar';
@@ -57,9 +57,7 @@ const Dashboard: React.FC = () => {
       );
 
       setConcludedAppointments(
-        response.data.filter(
-          appointment => appointment.concluded && appointment.past,
-        ),
+        response.data.filter(appointment => appointment.concluded),
       );
     }
 
@@ -98,10 +96,11 @@ const Dashboard: React.FC = () => {
 
             <AppointmentsList
               horizontal
+              showsHorizontalScrollIndicator={false}
               data={appointments}
               keyExtractor={appointment => appointment.id}
               renderItem={({ item: appointment }) => (
-                <ListAppointment
+                <AppointmentCard
                   appointment={appointment}
                   onCancelAppointment={() =>
                     handleCancelAppointment(appointment.id)
@@ -117,12 +116,14 @@ const Dashboard: React.FC = () => {
             <Title>Agendamentos concluídos desse mês</Title>
 
             <ConcludedAppointmentsList
+              showsHorizontalScrollIndicator={false}
               horizontal
               data={concludedAppointments}
               keyExtractor={appointment => appointment.id}
               renderItem={({ item: appointment }) => (
-                <ListConcludedAppointment appointment={appointment} />
+                <ConcludedAppointmentCard appointment={appointment} />
               )}
+              contentContainerStyle={{ paddingRight: 20 }}
             />
           </>
         )}

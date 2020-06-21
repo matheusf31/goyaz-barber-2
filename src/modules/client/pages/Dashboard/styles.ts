@@ -8,7 +8,7 @@ export const Container = styled.ScrollView``;
 export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   color: #f4ede8;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 24px 24px;
 `;
 
