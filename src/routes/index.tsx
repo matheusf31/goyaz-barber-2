@@ -2,6 +2,7 @@ import React from 'react';
 import { ActivityIndicator, View, Alert } from 'react-native';
 
 import AuthRoutes from '../shared/routes/auth.routes';
+import Background from '../shared/components/Background';
 import ClientRoutes from '../modules/client/routes';
 import ProviderRoutes from '../modules/provider/routes';
 
@@ -12,9 +13,13 @@ const Routes: React.FC = () => {
 
   if (loading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" color="#000" />
-      </View>
+      <Background>
+        <View
+          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+        >
+          <ActivityIndicator size="large" color="#fff" />
+        </View>
+      </Background>
     );
   }
 
