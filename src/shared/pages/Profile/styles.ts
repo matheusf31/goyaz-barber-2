@@ -1,16 +1,11 @@
 import styled from 'styled-components/native';
-import { Platform } from 'react-native';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 140px;
-
-  margin-top: ${Platform.OS === 'ios' ? 90 : 30}px;
-
-  padding: 0 30px;
+  margin: 90px 30px 140px 30px;
 `;
 
 export const UserAvatarButton = styled.TouchableOpacity``;
@@ -23,7 +18,7 @@ export const UserAvatar = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-size: 22px;
+  font-size: 26px;
   color: #fff;
   font-family: 'RobotoSlab-Medium';
   margin: 34px 0 24px;
