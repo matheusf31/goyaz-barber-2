@@ -27,8 +27,9 @@
     "react-native-image-picker": "^2.3.1",
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "^3.0.3",
-    "react-native-screens": "^2.8.0",
+    "react-native-screens": "^2.9.0",
     "react-native-svg": "^12.1.0",
+    "react-native-swipe-list-view": "^3.1.2",
     "react-native-vector-icons": "^6.6.0",
     "styled-components": "^5.1.1",
     "yup": "^0.29.1"
@@ -47,6 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^3.2.0",
     "@typescript-eslint/parser": "^3.2.0",
     "babel-jest": "^24.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
