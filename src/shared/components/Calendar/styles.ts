@@ -5,12 +5,11 @@ interface ICalendarContainer {
   opened: boolean;
 }
 
-export const Container = styled.View`
-  padding: 0px 25px;
-`;
+export const Container = styled.View``;
 
 export const CalendarContainer = styled.View<ICalendarContainer>`
   display: ${props => (props.opened ? 'flex' : 'none')};
+  margin-bottom: 10px;
 `;
 
 export const DateButton = styled.TouchableOpacity`

@@ -4,6 +4,9 @@ import { format, parseISO } from 'date-fns';
 import { LocaleConfig } from 'react-native-calendars';
 
 import Icon from 'react-native-vector-icons/Feather';
+
+import { useAuth } from '../../hooks/auth';
+
 import {
   Container,
   DateButton,
@@ -82,7 +85,9 @@ const Calendar: React.FC<ICalendarProps> = ({
   onChangeDate,
   dateFormatted,
 }) => {
-  const [opened, setOpened] = useState(true);
+  const { profile } = useAuth();
+
+  const [opened, setOpened] = useState(false);
 
   const onDayPress = useCallback(
     pressedDate => {
@@ -102,7 +107,7 @@ const Calendar: React.FC<ICalendarProps> = ({
       <CalendarContainer opened={opened}>
         <CalendarInput
           current={date}
-          minDate={new Date()}
+          minDate={profile.provider ? new Date(2020, 0, 1) : new Date()}
           hideExtraDays
           onDayPress={onDayPress}
           markingType="custom"

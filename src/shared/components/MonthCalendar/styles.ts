@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
-import { Platform } from 'react-native';
 
 export const Container = styled.View`
-  margin-top: ${Platform.OS === 'ios' ? 60 : 20}px;
+  margin-top: 20px;
   margin-bottom: 10px;
 `;
 
