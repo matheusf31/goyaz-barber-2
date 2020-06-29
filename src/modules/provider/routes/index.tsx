@@ -4,10 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Feather';
 
-import Dashboard from '../pages/Dashboard';
 import Clients from '../pages/Clients';
 import AppointmentsInfo from '../pages/AppointmentsInfo';
 import Profile from '../../../shared/pages/Profile';
+import PartinersRoutes from './partiners.routes';
+import DashboardRoutes from './dashboard.routes';
 
 interface ITabBarIcon {
   focused: boolean;
@@ -20,17 +21,16 @@ const tabBarOptions = {
   activeTintColor: '#ff9000',
   inactiveTintColor: '#fff',
   style: {
-    backgroundColor: '#17181d',
-    marginTop: 1,
-    paddingTop: 5,
-    height: Platform.OS === 'ios' ? '11%' : 65,
+    backgroundColor: '#18171d',
+    paddingTop: Platform.OS === 'ios' ? 5 : 0,
+    height: Platform.OS === 'ios' ? '10.5%' : 60,
   },
   labelStyle: {
-    marginBottom: Platform.OS === 'ios' ? 15 : 6,
+    marginBottom: Platform.OS === 'ios' ? 15 : 10,
   },
 };
 
-const dashboardOptions = {
+const dashboardRoutesOptions = {
   tabBarLabel: 'Agendamentos',
   tabBarIcon: ({ focused }: ITabBarIcon) => (
     <Icon name="calendar" size={20} color={focused ? '#ff9000' : '#fff'} />
@@ -51,6 +51,13 @@ const profileOptions = {
   ),
 };
 
+const partinersRoutesOptions = {
+  tabBarLabel: 'Parceiros',
+  tabBarIcon: ({ focused }: ITabBarIcon) => (
+    <Icon name="user-check" size={20} color={focused ? '#ff9000' : '#fff'} />
+  ),
+};
+
 const appointmentsInfoOptions = {
   tabBarLabel: 'Caixa',
   tabBarIcon: ({ focused }: ITabBarIcon) => (
@@ -61,9 +68,9 @@ const appointmentsInfoOptions = {
 const ProviderRoutes: React.FC = () => (
   <Tab.Navigator tabBarOptions={tabBarOptions}>
     <Tab.Screen
-      name="Dashboard"
-      component={Dashboard}
-      options={dashboardOptions}
+      name="DashboardRoutes"
+      component={DashboardRoutes}
+      options={dashboardRoutesOptions}
     />
     <Tab.Screen
       name="AppointmentsInfo"
@@ -71,6 +78,11 @@ const ProviderRoutes: React.FC = () => (
       options={appointmentsInfoOptions}
     />
     <Tab.Screen name="Clients" component={Clients} options={clientsOptions} />
+    <Tab.Screen
+      name="PartinersRoutes"
+      component={PartinersRoutes}
+      options={partinersRoutesOptions}
+    />
     <Tab.Screen name="Perfil" component={Profile} options={profileOptions} />
   </Tab.Navigator>
 );
