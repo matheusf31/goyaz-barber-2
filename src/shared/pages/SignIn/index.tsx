@@ -76,7 +76,7 @@ const SignIn: React.FC = () => {
           return;
         }
 
-        Alert.alert('Erro na autenticação!', 'Ocorreu um erro ao fazer login');
+        Alert.alert('Erro na autenticação!', err.response.data.message);
       }
     },
     [signIn],
@@ -130,7 +130,7 @@ const SignIn: React.FC = () => {
               </Button>
             </Form>
 
-            <ForgotPassword onPress={() => console.log('esqueci minha senha')}>
+            <ForgotPassword onPress={() => navigation.navigate('SendToken')}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>

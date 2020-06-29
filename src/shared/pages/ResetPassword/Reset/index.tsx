@@ -38,7 +38,7 @@ const ResetPassword: React.FC = () => {
         formRef.current?.setFieldValue('newPassword', '');
         formRef.current?.setFieldValue('confirmPassword', '');
 
-        Alert.alert('Erro!', err.response.data.error);
+        Alert.alert('Erro!', err.response.data.message);
       }
     },
     [navigation],
