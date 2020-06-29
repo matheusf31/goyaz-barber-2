@@ -8,7 +8,7 @@ interface IClientAvatar {
   banned: boolean;
 }
 
-export const Container = styled.View``;
+export const Container = styled.TouchableHighlight``;
 
 export const ClientCardContainer = styled.View<IClientCardContainer>`
   flex-direction: row;
@@ -22,7 +22,6 @@ export const ClientCardContainer = styled.View<IClientCardContainer>`
   border-color: ${props => (props.banned ? 'red' : '#f4f4f4')};
 
   align-items: center;
-  justify-content: space-around;
 `;
 
 export const ClientAvatar = styled.Image<IClientAvatar>`
@@ -37,7 +36,7 @@ export const ClientAvatar = styled.Image<IClientAvatar>`
 export const ClientInfoContainer = styled.View`
   margin-left: 20px;
 
-  width: 150px;
+  flex: 1;
 `;
 
 export const ClientName = styled.Text`
@@ -50,27 +49,9 @@ export const ClientName = styled.Text`
 
 export const ClientGenericText = styled.Text`
   color: #18171d;
-  font-size: 12px;
+  font-size: 16px;
   font-family: 'RobotoSlab-Regular';
   padding: 0 0 5px 0;
 `;
 
-export const ClientConfirmActionContainer = styled.View`
-  margin-bottom: 15px;
-  padding: 30px 0;
-  border-radius: 10px;
-  background: #f4f4f4;
-
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ClientButtonContainer = styled.View`
-  flex-direction: row;
-  margin-top: 10px;
-  margin-bottom: -10px;
-`;
-
-export const ClientButton = styled.TouchableOpacity`
-  padding: 0 10px;
-`;
+export const RemoveSelectedClientButton = styled.TouchableOpacity``;

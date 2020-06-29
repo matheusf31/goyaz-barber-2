@@ -24,13 +24,13 @@ import { IClients } from '../index';
 interface IClientCardProps {
   client: IClients;
   textFilter: string;
-  reloadClients(): void;
+  onClientChange: React.Dispatch<React.SetStateAction<IClients[]>>;
 }
 
 const ClientCard: React.FC<IClientCardProps> = ({
   client,
   textFilter,
-  reloadClients,
+  onClientChange,
 }) => {
   const [confirm, setConfirm] = useState(false);
 
@@ -42,14 +42,22 @@ const ClientCard: React.FC<IClientCardProps> = ({
           banned: client.banned,
         });
 
-        reloadClients();
+        onClientChange(prevState => {
+          const clientIndex = prevState.findIndex(
+            element => element.id === user_id,
+          );
+
+          prevState[clientIndex].banned = !prevState[clientIndex].banned;
+
+          return prevState;
+        });
 
         setConfirm(false);
       } catch (err) {
         Alert.alert('Erro ao banir!', err.response.data.message);
       }
     },
-    [client.banned, reloadClients],
+    [client.banned, onClientChange],
   );
 
   const regexExp = useMemo(() => {
@@ -57,7 +65,7 @@ const ClientCard: React.FC<IClientCardProps> = ({
   }, [textFilter]);
 
   return (
-    client.name.toLocaleLowerCase().match(regexExp) && (
+    client.name.match(regexExp) && (
       <Container>
         {!confirm && (
           <ClientCardContainer banned={client.banned}>

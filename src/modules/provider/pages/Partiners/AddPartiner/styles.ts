@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
-import { FlatList } from 'react-native';
-
-import { IClients } from './index';
 
 export const Container = styled.SafeAreaView`
+  flex: 1;
+
   margin: 0 24px;
 `;
 
@@ -13,9 +12,5 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
 
   margin-top: 30px;
-  margin-bottom: 20px;
-`;
-
-export const ClientsList = styled(FlatList as new () => FlatList<IClients>)`
-  margin-top: 30px;
+  margin-bottom: 30px;
 `;

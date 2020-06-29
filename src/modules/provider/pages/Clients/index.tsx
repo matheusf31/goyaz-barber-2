@@ -25,15 +25,11 @@ const Clients: React.FC = () => {
 
   const isFocused = useIsFocused();
 
-  const loadClients = useCallback(() => {
-    api.get('users').then(response => setClients(response.data));
-  }, []);
-
   useEffect(() => {
     if (isFocused) {
-      loadClients();
+      api.get('users').then(response => setClients(response.data));
     }
-  }, [isFocused, loadClients]);
+  }, [isFocused]);
 
   return (
     <Background>
@@ -52,7 +48,7 @@ const Clients: React.FC = () => {
             <ClientCard
               client={client}
               textFilter={textFilter}
-              reloadClients={loadClients}
+              onClientChange={setClients}
             />
           )}
           contentContainerStyle={{ paddingBottom: 300 }}

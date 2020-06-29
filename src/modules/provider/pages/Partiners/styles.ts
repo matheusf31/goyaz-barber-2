@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
 
-import { IClients } from './index';
+import { IPartiners } from './index';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   margin: 0 24px;
 `;
 
@@ -16,6 +16,10 @@ export const Title = styled.Text`
   margin-bottom: 20px;
 `;
 
-export const ClientsList = styled(FlatList as new () => FlatList<IClients>)`
-  margin-top: 30px;
+export const PartinerList = styled(
+  FlatList as new () => FlatList<IPartiners>,
+)``;
+
+export const AddPartinerButton = styled.TouchableOpacity`
+  align-self: center;
 `;
