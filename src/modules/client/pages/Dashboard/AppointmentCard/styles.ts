@@ -73,25 +73,25 @@ export const Contact = styled.TouchableOpacity`
 `;
 
 export const CancelationCardContainer = styled.View`
-  flex-direction: row;
   margin: 0 16px 0px 36px;
   padding: 20px 20px;
   background: #18171d;
   border-radius: 10px;
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 export const CancelationInfo = styled.View`
-  width: 200px;
+  padding: 20px 0;
 `;
 
 export const TextCancelation = styled.Text`
   align-self: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
+  font-family: 'RobotoSlab-Regular';
 `;
 
 export const CancelButtonsContainer = styled.View`

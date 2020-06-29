@@ -93,23 +93,23 @@ const SelectDate: React.FC = () => {
     [navigation, selectedProvider, providers],
   );
 
-  const morningAvailability = useMemo(() => {
-    const compareDate = setHours(selectedDay, 12);
+  const compareDate = useMemo(() => {
+    return setHours(selectedDay, 12);
+  }, [selectedDay]);
 
+  const morningAvailability = useMemo(() => {
     return availableHours.filter(
       ({ timeFormatted, available }) =>
         isBefore(parseISO(timeFormatted), compareDate) && available,
     );
-  }, [availableHours, selectedDay]);
+  }, [availableHours, compareDate]);
 
   const afternoonAvailability = useMemo(() => {
-    const compareDate = setHours(selectedDay, 12);
-
     return availableHours.filter(
       ({ timeFormatted, available }) =>
         isAfter(parseISO(timeFormatted), compareDate) && available,
     );
-  }, [availableHours, selectedDay]);
+  }, [availableHours, compareDate]);
 
   const dateFormatted = useMemo(
     () => format(selectedDay, "dd 'de' MMMM',' cccc", { locale: pt }),
@@ -118,7 +118,7 @@ const SelectDate: React.FC = () => {
 
   return (
     <Background>
-      <Container>
+      <Container contentContainerStyle={{ paddingBottom: 150 }}>
         <ProvidersListContainer>
           <ProvidersList
             horizontal

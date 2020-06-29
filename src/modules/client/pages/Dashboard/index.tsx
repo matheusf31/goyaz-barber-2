@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Alert } from 'react-native';
+import { Alert, SafeAreaView } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import api from '../../../../shared/services/api';
@@ -87,7 +87,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <Background>
-      <MonthCalendar date={selectedMonth} onChangeMonth={setSelectedMonth} />
+      <SafeAreaView>
+        <MonthCalendar date={selectedMonth} onChangeMonth={setSelectedMonth} />
+      </SafeAreaView>
 
       <Container>
         {appointments.length > 0 && (

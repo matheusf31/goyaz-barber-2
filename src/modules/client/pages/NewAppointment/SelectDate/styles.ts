@@ -25,20 +25,14 @@ interface ISectionProps {
 }
 
 export const Container = styled.ScrollView`
-  margin-bottom: 100px;
+  margin: 0 24px;
 `;
 
 export const ProvidersListContainer = styled.View`
   height: 112px;
 `;
 
-export const ProvidersList = styled(
-  FlatList as new () => FlatList<IProvider>,
-).attrs({
-  contentContainerStyle: {
-    paddingHorizontal: 24,
-  },
-})`
+export const ProvidersList = styled(FlatList as new () => FlatList<IProvider>)`
   padding: 28px 0px;
 `;
 
@@ -73,7 +67,7 @@ export const ScheduleTitle = styled.Text`
   font-family: 'RobotoSlab-Medium';
   color: #f4ede8;
   font-size: 20px;
-  margin: 0 24px 24px;
+  margin: 0 0 24px;
 `;
 
 export const Section = styled.View<ISectionProps>`
@@ -85,13 +79,10 @@ export const SectionTitle = styled.Text`
   font-family: 'RobotoSlab-Regular';
   color: #999591;
   font-size: 18px;
-  margin: 0 24px 12px;
+  margin: 0 0 12px;
 `;
 
 export const SectionContent = styled.ScrollView.attrs({
-  contentContainerStyle: {
-    paddingHorizontal: 24,
-  },
   showsHorizontalScrollIndicator: false,
   horizontal: true,
 })``;

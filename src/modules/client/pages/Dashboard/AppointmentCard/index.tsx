@@ -153,11 +153,11 @@ const AppointmentCard: React.FC<IAppointmentCardProps> = ({
 
           <CancelButtonsContainer>
             <CancelCancelation onPress={() => setConfirm(false)}>
-              <Icon name="x" size={25} color="#f64c75" />
+              <Icon name="x" size={30} color="#f64c75" />
             </CancelCancelation>
 
             <ConfirmCancelation onPress={handleAppointmentCancel}>
-              <Icon name="check" size={25} color="#54F64C" />
+              <Icon name="check" size={30} color="#54F64C" />
             </ConfirmCancelation>
           </CancelButtonsContainer>
         </CancelationCardContainer>
