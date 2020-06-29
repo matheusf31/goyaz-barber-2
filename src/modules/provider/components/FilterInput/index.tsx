@@ -22,7 +22,6 @@ const FilterInput: React.FC<IFilterInput> = ({
           keyboardAppearance="dark"
           autoCorrect={false}
           placeholder={placeHolderText}
-          returnKeyType="next"
           onChangeText={text => onChangeTextFilter(text)}
           placeholderTextColor="#89828E"
         />
