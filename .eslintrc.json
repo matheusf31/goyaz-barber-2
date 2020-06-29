@@ -27,6 +27,7 @@
     "react/jsx-props-no-spreading": "off",
     "prettier/prettier": "error",
     "react/jsx-one-expression-per-line": "off",
+    "no-param-reassign": "off",
     "import/no-duplicates": "off",
     "react/jsx-curly-newline": "off",
     "no-unused-expressions": "off",
