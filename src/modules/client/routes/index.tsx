@@ -19,9 +19,9 @@ const tabBarOptions = {
   activeTintColor: '#ff9000',
   inactiveTintColor: '#fff',
   style: {
-    backgroundColor: '#17181d',
+    backgroundColor: '#18171d',
     marginTop: 1,
-    paddingTop: 5,
+    paddingTop: Platform.OS === 'ios' ? 5 : 10,
     height: Platform.OS === 'ios' ? '11%' : 65,
   },
   labelStyle: {
