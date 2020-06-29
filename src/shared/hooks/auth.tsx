@@ -87,12 +87,16 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signOut = useCallback(async () => {
+    setLoading(true);
+
     await AsyncStorage.multiRemove([
       '@GoyazBarber:token',
       '@GoyazBarber:profile',
     ]);
 
     setAuthData({} as IAuthDataState);
+
+    setLoading(false);
   }, []);
 
   const updateUser = useCallback(
