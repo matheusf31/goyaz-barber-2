@@ -6,7 +6,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { TextInputProperties } from 'react-native';
+import { TextInputProperties, StyleProp, ViewStyle } from 'react-native';
 import { useField } from '@unform/core';
 
 import { Container, TextInput, Icon } from './styles';
@@ -14,7 +14,7 @@ import { Container, TextInput, Icon } from './styles';
 interface IInputProps extends TextInputProperties {
   name: string;
   icon: string;
-  containerStyle?: {};
+  containerStyle?: StyleProp<ViewStyle>;
 }
 
 interface IInputValueReference {
