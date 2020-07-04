@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { Alert, ScrollView } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
+
+import api from '../../../../../shared/services/api';
 
 import AppointmentInfoCard from './AppointmentInfoCard';
 import AddAdditionalModal from './AddAdditionalModal';
@@ -16,6 +19,7 @@ import {
   AdditionalRowContainer,
   AdditionalContainer,
   AdditionalContainerText,
+  RemoveAdditionalButton,
   AdditionalFooterContainer,
   AddAdditionalButton,
 } from './styles';
@@ -36,90 +40,128 @@ const AppointmentPage: React.FC = () => {
 
   const [modalVisible, setModalVisible] = useState(false);
 
+  const handleRemoveAdditional = useCallback(
+    async (description: string) => {
+      try {
+        const response = await api.delete(
+          `appointments/additional/${appointment.id}`,
+          {
+            params: {
+              description,
+            },
+          },
+        );
+
+        setAppointment(response.data);
+      } catch (err) {
+        Alert.alert('Erro!', err.response.data.message);
+      }
+    },
+    [appointment.id],
+  );
+
   return (
     <Background>
-      {appointment && (
-        <Container>
-          <Title>Adicionais</Title>
+      <ScrollView contentContainerStyle={{ paddingBottom: 200 }}>
+        {appointment && (
+          <Container>
+            <Title>Adicionais</Title>
 
-          <AdditionalCardContainer>
-            <AdditionalBodyContainer>
-              <AdditionalContainer>
-                <AdditionalMainText>Descrição</AdditionalMainText>
+            <AdditionalCardContainer>
+              <AdditionalBodyContainer>
+                <AdditionalContainer>
+                  <AdditionalMainText>Descrição</AdditionalMainText>
 
-                {appointment.additionals.services.map(service => (
-                  <AdditionalRowContainer key={service.description}>
-                    <AdditionalContainerText>
-                      {service.description}
-                    </AdditionalContainerText>
-                  </AdditionalRowContainer>
-                ))}
-              </AdditionalContainer>
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <AdditionalContainerText>
+                        {service.description}
+                      </AdditionalContainerText>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
 
-              <AdditionalContainer>
-                <AdditionalMainText>Valor</AdditionalMainText>
+                <AdditionalContainer>
+                  <AdditionalMainText>Valor</AdditionalMainText>
 
-                {appointment.additionals.services.map(service => (
-                  <AdditionalRowContainer key={service.description}>
-                    <AdditionalContainerText>
-                      R$ {service.value}
-                    </AdditionalContainerText>
-                  </AdditionalRowContainer>
-                ))}
-              </AdditionalContainer>
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <AdditionalContainerText>
+                        R$ {service.value}
+                      </AdditionalContainerText>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
 
-              <AdditionalContainer>
-                <AdditionalMainText>Quantidade</AdditionalMainText>
+                <AdditionalContainer>
+                  <AdditionalMainText>Quantidade</AdditionalMainText>
 
-                {appointment.additionals.services.map(service => (
-                  <AdditionalRowContainer key={service.description}>
-                    <AdditionalContainerText>
-                      {service.quantity}
-                    </AdditionalContainerText>
-                  </AdditionalRowContainer>
-                ))}
-              </AdditionalContainer>
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <AdditionalContainerText>
+                        {service.quantity}
+                      </AdditionalContainerText>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
 
-              <AdditionalContainer>
-                <AdditionalMainText>Subtotal</AdditionalMainText>
+                <AdditionalContainer>
+                  <AdditionalMainText>Subtotal</AdditionalMainText>
 
-                {appointment.additionals.services.map(service => (
-                  <AdditionalRowContainer key={service.description}>
-                    <AdditionalContainerText>
-                      R$ {service.quantity * service.value}
-                    </AdditionalContainerText>
-                  </AdditionalRowContainer>
-                ))}
-              </AdditionalContainer>
-            </AdditionalBodyContainer>
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <AdditionalContainerText>
+                        R$ {service.quantity * service.value}
+                      </AdditionalContainerText>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
 
-            <AdditionalFooterContainer>
-              <AdditionalMainText>Total:</AdditionalMainText>
-              <AdditionalContainerText style={{ marginLeft: 5 }}>
-                R$ {appointment.additionals.total_income}
-              </AdditionalContainerText>
-            </AdditionalFooterContainer>
-          </AdditionalCardContainer>
+                <AdditionalContainer>
+                  <AdditionalMainText>-</AdditionalMainText>
 
-          <AddAdditionalButton onPress={() => setModalVisible(true)}>
-            <Icon name="plus-circle" size={36} color="#ff9000" />
-          </AddAdditionalButton>
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <RemoveAdditionalButton
+                        onPress={() =>
+                          handleRemoveAdditional(service.description)
+                        }
+                      >
+                        <Icon name="minus" size={18} color="red" />
+                      </RemoveAdditionalButton>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
+              </AdditionalBodyContainer>
 
-          <AddAdditionalModal
-            appointment_id={appointment.id}
-            modalVisible={modalVisible}
-            onModalChange={setModalVisible}
-            onAppointmentUpdate={setAppointment}
-          />
+              <AdditionalFooterContainer>
+                <AdditionalMainText>Total:</AdditionalMainText>
+                <AdditionalContainerText style={{ marginLeft: 5 }}>
+                  R$ {appointment.additionals.total_income}
+                </AdditionalContainerText>
+              </AdditionalFooterContainer>
+            </AdditionalCardContainer>
 
-          <Title>Detalhes</Title>
+            <AddAdditionalButton onPress={() => setModalVisible(true)}>
+              <Icon name="plus-circle" size={36} color="#ff9000" />
+            </AddAdditionalButton>
 
-          <AppointmentInfoCard
-            appointment={appointment}
-            onAppointmentUpdate={setAppointment}
-          />
-        </Container>
-      )}
+            <AddAdditionalModal
+              appointment_id={appointment.id}
+              modalVisible={modalVisible}
+              onModalChange={setModalVisible}
+              onAppointmentUpdate={setAppointment}
+            />
+
+            <Title>Detalhes</Title>
+
+            <AppointmentInfoCard
+              appointment={appointment}
+              onAppointmentUpdate={setAppointment}
+            />
+          </Container>
+        )}
+      </ScrollView>
     </Background>
   );
 };

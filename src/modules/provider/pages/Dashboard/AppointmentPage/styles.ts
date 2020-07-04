@@ -30,12 +30,14 @@ export const AdditionalCardContainer = styled.View`
 export const AdditionalBodyContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const AdditionalMainText = styled.Text`
   color: #18171d;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'RobotoSlab-Medium';
+  align-self: center;
 `;
 
 export const AdditionalContainer = styled.View`
@@ -55,6 +57,8 @@ export const AdditionalContainerText = styled.Text`
   font-size: 14px;
   font-family: 'RobotoSlab-Regular';
 `;
+
+export const RemoveAdditionalButton = styled.TouchableOpacity``;
 
 export const AdditionalFooterContainer = styled.View`
   flex-direction: row;
