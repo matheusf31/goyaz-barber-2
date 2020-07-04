@@ -66,21 +66,25 @@ const Dashboard: React.FC = () => {
   const [schedules, setSchedules] = useState<ISchedule[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const loadSchedule = useCallback(() => {
+    api
+      .get(`providers/day-availability/${profile.id}`, {
+        params: {
+          day: selectedDay.getDate(),
+          month: selectedDay.getMonth() + 1,
+          year: selectedDay.getFullYear(),
+        },
+      })
+      .then(response => setSchedules(response.data));
+  }, [selectedDay, profile.id]);
+
   useEffect(() => {
     if (loading || isFocused) {
-      api
-        .get(`providers/day-availability/${profile.id}`, {
-          params: {
-            day: selectedDay.getDate(),
-            month: selectedDay.getMonth() + 1,
-            year: selectedDay.getFullYear(),
-          },
-        })
-        .then(response => setSchedules(response.data));
+      loadSchedule();
 
       setLoading(false);
     }
-  }, [profile.id, selectedDay, loading, isFocused]);
+  }, [loadSchedule, loading, isFocused]);
 
   const handleHourBusy = useCallback(
     async (time: string, rowMap: RowMap<ISchedule>) => {
@@ -94,8 +98,10 @@ const Dashboard: React.FC = () => {
           is_unavailable: !findSchedule.providerBusy,
         });
       }
+
+      loadSchedule();
     },
-    [schedules],
+    [schedules, loadSchedule],
   );
 
   const handleDayBusy = useCallback(async () => {
