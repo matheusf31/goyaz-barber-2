@@ -111,7 +111,9 @@ const Dashboard: React.FC = () => {
       date: newDate,
       is_unavailable: !schedules[0].dayBusy,
     });
-  }, [selectedDay, schedules]);
+
+    loadSchedule();
+  }, [selectedDay, schedules, loadSchedule]);
 
   const dateFormatted = useMemo(
     () => format(selectedDay, "dd 'de' MMMM',' cccc", { locale: pt }),
