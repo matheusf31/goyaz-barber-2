@@ -179,22 +179,12 @@ const SelectServiceAndConfirm: React.FC = () => {
 
             <ConfirmContainerDetails>
               <DetailsContainer>
-                <Icon
-                  name="user"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="user" size={16} color="#ff9000" />
                 <DetailsName>{provider.name}</DetailsName>
               </DetailsContainer>
 
               <DetailsContainer>
-                <Icon
-                  name="scissors"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="scissors" size={16} color="#ff9000" />
                 <DetailsText style={{ fontSize: 16 }}>
                   {selectedService.name.charAt(0).toUpperCase() +
                     selectedService.name.slice(1)}
@@ -202,12 +192,7 @@ const SelectServiceAndConfirm: React.FC = () => {
               </DetailsContainer>
 
               <DetailsContainer>
-                <Icon
-                  name="clock"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="clock" size={16} color="#ff9000" />
                 <DetailsText>{formatedDate}</DetailsText>
               </DetailsContainer>
             </ConfirmContainerDetails>

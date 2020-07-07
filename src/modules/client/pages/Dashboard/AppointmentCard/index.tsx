@@ -77,42 +77,22 @@ const AppointmentCard: React.FC<IAppointmentCardProps> = ({
               <ProviderName>{appointment.provider.name}</ProviderName>
 
               <InfoContainer>
-                <Icon
-                  name="clock"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="clock" size={16} color="#ff9000" />
                 <GenericInfo>{`${formatedDate}`}</GenericInfo>
               </InfoContainer>
 
               <InfoContainer>
-                <Icon
-                  name="phone"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="phone" size={16} color="#ff9000" />
                 <GenericInfo>{appointment.provider.phone}</GenericInfo>
               </InfoContainer>
 
               <InfoContainer>
-                <Icon
-                  name="dollar-sign"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="dollar-sign" size={16} color="#ff9000" />
                 <GenericInfo>R$ {appointment.price}</GenericInfo>
               </InfoContainer>
 
               <InfoContainer>
-                <Icon
-                  name="scissors"
-                  size={16}
-                  color="#ff9000"
-                  style={{ marginTop: 2 }}
-                />
+                <Icon name="scissors" size={16} color="#ff9000" />
                 <GenericInfo>
                   {appointment.service.charAt(0).toUpperCase() +
                     appointment.service.slice(1)}

@@ -25,6 +25,8 @@ export const AppointmentInfoContainer = styled.View``;
 export const InfoContainer = styled.View`
   flex-direction: row;
   margin-bottom: 15px;
+
+  align-items: center;
 `;
 
 export const ProviderName = styled.Text`
