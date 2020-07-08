@@ -152,6 +152,7 @@ const SignUp: React.FC = () => {
                 icon="lock"
                 placeholder="Senha"
                 textContentType="oneTimeCode"
+                blurOnSubmit={false}
                 returnKeyType="send"
                 onSubmitEditing={() => formRef.current?.submitForm()}
               />
