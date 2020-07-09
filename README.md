@@ -46,7 +46,7 @@ Coming soon
 
 ## :computer: Backend
 
-See also the <a href="https://github.com/matheusf31/goyaz-barber-backend-2">backend!</a> of this app!
+See also the <a href="https://github.com/matheusf31/goyaz-barber-backend-2">backend</a> of this app!
 
 ## :warning: Disclaimer
 
