@@ -38,11 +38,11 @@ This project was developed with the following technologies:
 
 ## :iphone: Features
 
-Test
+Coming soon.
 
 ## :information_source: How to run
 
-Coming soon
+Coming soon.
 
 ## :computer: Backend
 
