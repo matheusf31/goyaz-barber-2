@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="#crystal_ball-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#iphone-features">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#iphone-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-run">How to run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#warning-disclaimer">Disclaimer</a>
@@ -35,6 +35,7 @@ This project was developed with the following technologies:
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 - [unform](https://github.com/Rocketseat/unform)
 - [date-fns](https://date-fns.org/)
+- [async-storage](https://github.com/react-native-community/async-storage)
 
 ## :iphone: Features
 
@@ -50,7 +51,7 @@ See also the <a href="https://github.com/matheusf31/goyaz-barber-backend-2">back
 
 ## :warning: Disclaimer
 
-- Why does this app have '2' in its name?
+Why does this app have '2' in its name?
 
 Because I have another version of this project, written with Javascript, and I haven't finished it yet and I decided to rewrite the entire project using Typescript.
 
