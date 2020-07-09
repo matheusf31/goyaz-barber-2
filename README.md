@@ -26,8 +26,6 @@
 
 This project was developed with the following technologies:
 
-<h5>General:</h5>
-
 - [react-native](https://reactnative.dev/)
 - [react](https://pt-br.reactjs.org/)
 - [styled-components](https://styled-components.com/)
@@ -36,6 +34,7 @@ This project was developed with the following technologies:
 - [unform](https://github.com/Rocketseat/unform)
 - [date-fns](https://date-fns.org/)
 - [async-storage](https://github.com/react-native-community/async-storage)
+- [react-navigation](https://reactnavigation.org/)
 
 ## :iphone: Features
 
