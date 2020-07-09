@@ -52,7 +52,7 @@ See also the <a href="https://github.com/matheusf31/goyaz-barber-backend-2">back
 
 Why does this app have '2' in its name?
 
-Because I have another version of this project, written with Javascript, and I haven't finished it yet and I decided to rewrite the entire project using Typescript.
+Because I have another version of this project, written with Javascript, and separated into two apps, one for the [provider](https://github.com/matheusf31/goyaz-barber-provider) and one for the [client](https://github.com/matheusf31/goyaz-barber-client). And I haven't finished it yet, and I decided to rewrite the entire project using Typecript.
 
 ---
 
