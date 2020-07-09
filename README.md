@@ -1,7 +1,7 @@
 <h1 align="center">
     <img alt="Goyaz Barber" src="./.github/assets/logo3.png" />
     <br>
-    Goyaz Barber Backend 2.0
+    Goyaz Barber 2.0
 </h1>
 
 <h4 align="center">
@@ -16,8 +16,10 @@
 
 <p align="center">
   <a href="#crystal_ball-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#iphone-app">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-run">How to run</a>
+  <a href="#iphone-features">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-run">How to run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-backend">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#warning-disclaimer">Disclaimer</a>
 </p>
 
 ## :crystal_ball: Technologies
@@ -34,7 +36,7 @@ This project was developed with the following technologies:
 - [unform](https://github.com/Rocketseat/unform)
 - [date-fns](https://date-fns.org/)
 
-## :iphone: App
+## :iphone: Features
 
 Test
 
@@ -42,9 +44,15 @@ Test
 
 Coming soon
 
-## Backend
+## :computer: Backend
 
 See also the <a href="https://github.com/matheusf31/goyaz-barber-backend-2">backend!</a> of this app!
+
+## :warning: Disclaimer
+
+- Why does this app have '2' in its name?
+
+Because I have another version of this project, written with Javascript, and I haven't finished it yet and I decided to rewrite the entire project using Typescript.
 
 ---
 
