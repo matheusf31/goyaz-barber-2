@@ -1,8 +1,8 @@
-import React from 'react';
-import { ActivityIndicator, View, Alert } from 'react-native';
+import React, { useEffect } from 'react';
+import { Alert } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 import AuthRoutes from '../shared/routes/auth.routes';
-import Background from '../shared/components/Background';
 import ClientRoutes from '../modules/client/routes';
 import ProviderRoutes from '../modules/provider/routes';
 
@@ -11,17 +11,11 @@ import { useAuth } from '../shared/hooks/auth';
 const Routes: React.FC = () => {
   const { profile, loading } = useAuth();
 
-  if (loading) {
-    return (
-      <Background>
-        <View
-          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-        >
-          <ActivityIndicator size="large" color="#fff" />
-        </View>
-      </Background>
-    );
-  }
+  useEffect(() => {
+    if (!loading) {
+      SplashScreen.hide();
+    }
+  }, [loading]);
 
   if (profile && profile.banned) {
     Alert.alert('Alerta!', 'Você foi banido da aplicação.');
