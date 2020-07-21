@@ -6,11 +6,10 @@ import background from '../../assets/background_laranja.png';
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 
-export default styled.ImageBackground.attrs(props => ({
+export default styled.ImageBackground.attrs({
   defaultSource: background,
   source: background,
-  blurRadius: props.blurRadius || 2,
-}))`
+})`
   position: absolute;
   height: ${screenHeight}px;
   width: ${screenWidth + 1}px;
