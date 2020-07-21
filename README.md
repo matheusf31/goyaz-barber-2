@@ -42,7 +42,7 @@ Coming soon.
 
 ## :information_source: How to run
 
-Coming soon.
+I maked this [step by step](https://www.notion.so/How-to-run-mobile-app-with-the-server-b9e95c84e90c48a5a27aac2546dbbf13) to run the app.
 
 ## :computer: Backend
 
