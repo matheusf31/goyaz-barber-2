@@ -117,97 +117,98 @@ const SelectServiceAndConfirm: React.FC = () => {
 
   return (
     <Background>
-      <Container />
+      <Container>
+        <Title>Escolha o serviço</Title>
 
-      <Title>Escolha o serviço</Title>
+        <ServicesContainer>
+          <ServicesList
+            numColumns={2}
+            data={services}
+            keyExtractor={service => service.name}
+            renderItem={({ item: service }) => (
+              <ServiceContainer
+                selected={selectedService === service}
+                onPress={() => handleSelectService(service)}
+              >
+                <ServiceName selected={selectedService === service}>
+                  {service.name}
+                </ServiceName>
 
-      <ServicesContainer>
-        <ServicesList
-          data={services}
-          keyExtractor={service => service.name}
-          renderItem={({ item: service }) => (
-            <ServiceContainer
-              selected={selectedService === service}
-              onPress={() => handleSelectService(service)}
-            >
-              <ServiceName selected={selectedService === service}>
-                {service.name}
-              </ServiceName>
+                <ServiceInfoContainer>
+                  <ServiceInfoPriceContainer>
+                    <Icon
+                      name="dollar-sign"
+                      size={12}
+                      color={selectedService === service ? '#18171d' : '#fff'}
+                    />
 
-              <ServiceInfoContainer>
-                <ServiceInfoPriceContainer>
-                  <Icon
-                    name="dollar-sign"
-                    size={12}
-                    color={selectedService === service ? '#18171d' : '#fff'}
-                  />
+                    <ServiceInfoText selected={selectedService === service}>
+                      {service.price}
+                    </ServiceInfoText>
+                  </ServiceInfoPriceContainer>
 
-                  <ServiceInfoText selected={selectedService === service}>
-                    {service.price}
-                  </ServiceInfoText>
-                </ServiceInfoPriceContainer>
+                  <ServiceInfoDurationContainer>
+                    <Icon
+                      name="clock"
+                      size={12}
+                      color={selectedService === service ? '#18171d' : '#fff'}
+                    />
 
-                <ServiceInfoDurationContainer>
-                  <Icon
-                    name="clock"
-                    size={12}
-                    color={selectedService === service ? '#18171d' : '#fff'}
-                  />
-
-                  <ServiceInfoText selected={selectedService === service}>
-                    {service.duration}
-                  </ServiceInfoText>
-                </ServiceInfoDurationContainer>
-              </ServiceInfoContainer>
-            </ServiceContainer>
-          )}
-        />
-      </ServicesContainer>
-
-      {showConfirmContainer && (
-        <ConfirmContainer>
-          <ConfirmContainerInfo>
-            {provider.avatar_url ? (
-              <Avatar
-                source={{
-                  uri: provider.avatar_url,
-                }}
-              />
-            ) : (
-              <Avatar source={defaultAvatar} />
+                    <ServiceInfoText selected={selectedService === service}>
+                      {service.duration}
+                    </ServiceInfoText>
+                  </ServiceInfoDurationContainer>
+                </ServiceInfoContainer>
+              </ServiceContainer>
             )}
+          />
+        </ServicesContainer>
 
-            <ConfirmContainerDetails>
-              <DetailsContainer>
-                <Icon name="user" size={16} color="#ff9000" />
-                <DetailsName>{provider.name}</DetailsName>
-              </DetailsContainer>
+        {showConfirmContainer && (
+          <ConfirmContainer>
+            <ConfirmContainerInfo>
+              {provider.avatar_url ? (
+                <Avatar
+                  source={{
+                    uri: provider.avatar_url,
+                  }}
+                />
+              ) : (
+                <Avatar source={defaultAvatar} />
+              )}
 
-              <DetailsContainer>
-                <Icon name="scissors" size={16} color="#ff9000" />
-                <DetailsText style={{ fontSize: 16 }}>
-                  {selectedService.name.charAt(0).toUpperCase() +
-                    selectedService.name.slice(1)}
-                </DetailsText>
-              </DetailsContainer>
+              <ConfirmContainerDetails>
+                <DetailsContainer>
+                  <Icon name="user" size={16} color="#ff9000" />
+                  <DetailsName>{provider.name}</DetailsName>
+                </DetailsContainer>
 
-              <DetailsContainer>
-                <Icon name="clock" size={16} color="#ff9000" />
-                <DetailsText>{formatedDate}</DetailsText>
-              </DetailsContainer>
-            </ConfirmContainerDetails>
-          </ConfirmContainerInfo>
+                <DetailsContainer>
+                  <Icon name="scissors" size={16} color="#ff9000" />
+                  <DetailsText style={{ fontSize: 16 }}>
+                    {selectedService.name.charAt(0).toUpperCase() +
+                      selectedService.name.slice(1)}
+                  </DetailsText>
+                </DetailsContainer>
 
-          <DetailsText style={{ marginTop: 10 }}>
-            Obs.: o serviço custará {selectedService.price} e durará{' '}
-            {selectedService.duration}
-          </DetailsText>
+                <DetailsContainer>
+                  <Icon name="clock" size={16} color="#ff9000" />
+                  <DetailsText>{formatedDate}</DetailsText>
+                </DetailsContainer>
+              </ConfirmContainerDetails>
+            </ConfirmContainerInfo>
 
-          <CreateAppointmentButton onPress={handleCreateAppointment}>
-            <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
-          </CreateAppointmentButton>
-        </ConfirmContainer>
-      )}
+            <DetailsText style={{ marginTop: 10 }}>
+              Obs.: o serviço custará {selectedService.price} e durará{' '}
+              {selectedService.duration}
+            </DetailsText>
+
+            <CreateAppointmentButton onPress={handleCreateAppointment}>
+              <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
+            </CreateAppointmentButton>
+          </ConfirmContainer>
+        )}
+      </Container>
     </Background>
   );
 };

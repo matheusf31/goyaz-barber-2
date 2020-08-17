@@ -102,20 +102,20 @@ const AppointmentCard: React.FC<IAppointmentCardProps> = ({
           </AppointmentCardContainer>
 
           <ButtonsContainer>
-            <MessageButtonContainer>
-              <Contact
-                onPress={() => {
-                  Linking.openURL(
-                    `whatsapp://send?phone=55${appointment.provider.phone}`,
-                  );
-                }}
-              >
+            <MessageButtonContainer
+              onPress={() => {
+                Linking.openURL(
+                  `whatsapp://send?phone=55${appointment.provider.phone}`,
+                );
+              }}
+            >
+              <Contact>
                 <WppIcon name="whatsapp" size={24} color="#fff" />
               </Contact>
             </MessageButtonContainer>
 
-            <CancelAppointmentButtonContainer>
-              <Cancel onPress={() => setConfirm(true)}>
+            <CancelAppointmentButtonContainer onPress={() => setConfirm(true)}>
+              <Cancel>
                 <Icon name="x-circle" size={24} color="#fff" />
               </Cancel>
             </CancelAppointmentButtonContainer>

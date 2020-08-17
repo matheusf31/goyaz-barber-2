@@ -59,23 +59,16 @@ export const AppointmentContainer = styled.View`
   width: 100%;
   justify-content: space-around;
   align-items: center;
-
-  /* background: red; */
 `;
 
 export const AppointmentInfoContainer = styled.View`
-  /* background: red; */
-
   flex: 1;
-  margin-left: 70px;
+  margin-left: 100px;
 `;
 
 export const AppointmentInfo = styled.View`
   flex-direction: row;
   padding: 2px 0;
-
-  /* background: red; */
-  /* margin-left: 20px; */
 `;
 
 export const AppointmentInfoText = styled.Text`

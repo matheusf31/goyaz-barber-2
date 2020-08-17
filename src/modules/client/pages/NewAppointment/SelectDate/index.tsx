@@ -4,6 +4,7 @@ import { setHours, isBefore, parseISO, isAfter, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
 import api from '../../../../../shared/services/api';
+import { socket } from '../../../../../shared/services/socket';
 
 import Background from '../../../../../shared/components/Background';
 import Calendar from '../../../../../shared/components/Calendar';
@@ -51,27 +52,41 @@ const SelectDate: React.FC = () => {
   const [selectedProvider, setSelectedProvider] = useState(
     routeParams.providerId,
   );
-  const [selectedDay, setSelectedDay] = useState(new Date());
+  const [selectedDay, setSelectedDay] = useState(() => new Date());
   const [selectedHour, setSelectedHour] = useState('');
   const [availableHours, setAvailableHours] = useState<IAvailableHoursItem[]>(
     [],
   );
+  const [scheduleUpdate, setScheduleUpdate] = useState(false);
 
   useEffect(() => {
     api.get('providers').then(response => setProviders(response.data));
   }, []);
 
-  useEffect(() => {
-    api
-      .get(`providers/day-availability/${selectedProvider}`, {
+  const loadSchedule = useCallback(async () => {
+    const response = await api.get(
+      `providers/day-availability/${selectedProvider}`,
+      {
         params: {
           year: selectedDay.getFullYear(),
           month: selectedDay.getMonth() + 1,
           day: selectedDay.getDate(),
         },
-      })
-      .then(response => setAvailableHours(response.data));
-  }, [selectedDay, selectedProvider]);
+      },
+    );
+
+    setAvailableHours(response.data);
+  }, [selectedDay, selectedProvider, scheduleUpdate]);
+
+  useEffect(() => {
+    loadSchedule();
+  }, [loadSchedule]);
+
+  useEffect(() => {
+    socket.on('scheduling-update', (_: unknown) => {
+      setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
+    });
+  }, []);
 
   const handleSelectProvider = useCallback((providerId: string) => {
     setSelectedProvider(providerId);

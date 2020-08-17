@@ -25,7 +25,7 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/jsx-props-no-spreading": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-param-reassign": "off",
     "import/no-duplicates": "off",
@@ -41,6 +41,12 @@
       "error",
       {
         "allowExpressions": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
       }
     ],
     "import/extensions": [

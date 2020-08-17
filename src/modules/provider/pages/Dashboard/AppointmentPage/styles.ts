@@ -40,16 +40,12 @@ export const AdditionalMainText = styled.Text`
   align-self: center;
 `;
 
-export const AdditionalContainer = styled.View`
-  /* background: green; */
-`;
+export const AdditionalContainer = styled.View``;
 
 export const AdditionalRowContainer = styled.View`
   flex-direction: row;
   justify-content: center;
   margin-top: 5px;
-
-  /* background: blue; */
 `;
 
 export const AdditionalContainerText = styled.Text`
