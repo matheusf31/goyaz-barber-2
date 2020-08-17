@@ -50,7 +50,9 @@ export const ButtonsContainer = styled.View`
   margin: 0 16px 0px 42px;
 `;
 
-export const MessageButtonContainer = styled.View`
+export const MessageButtonContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.9,
+})`
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -60,7 +62,9 @@ export const MessageButtonContainer = styled.View`
   height: 40px;
 `;
 
-export const CancelAppointmentButtonContainer = styled.View`
+export const CancelAppointmentButtonContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.9,
+})`
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -68,9 +72,9 @@ export const CancelAppointmentButtonContainer = styled.View`
   border-bottom-right-radius: 10px;
 `;
 
-export const Cancel = styled.TouchableOpacity``;
+export const Cancel = styled.View``;
 
-export const Contact = styled.TouchableOpacity`
+export const Contact = styled.View`
   margin-right: 5px;
 `;
 

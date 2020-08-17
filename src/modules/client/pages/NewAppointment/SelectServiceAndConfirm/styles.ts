@@ -12,13 +12,15 @@ interface IServiceNameProps {
   selected: boolean;
 }
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  margin: 0 24px;
+`;
 
 export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   color: #f4ede8;
   font-size: 20px;
-  margin: 30px 24px 10px;
+  margin: 30px 0px 10px;
 `;
 
 export const ServicesContainer = styled.View``;
@@ -26,11 +28,7 @@ export const ServicesContainer = styled.View``;
 export const ServicesList = styled(
   FlatList as new () => FlatList<IServices>,
 ).attrs({
-  contentContainerStyle: {
-    paddingHorizontal: 24,
-  },
   showsHorizontalScrollIndicator: false,
-  horizontal: true,
 })`
   padding: 14px 0px;
 `;
@@ -39,7 +37,12 @@ export const ServiceContainer = styled(RectButton)<IServiceContainerProps>`
   padding: 12px 18px;
   background: ${props => (props.selected ? '#ff9000' : '#18171d')};
   border-radius: 10px;
-  margin-right: 12px;
+  margin-bottom: 10px;
+
+  margin-right: 8px;
+  margin-left: 8px;
+
+  flex: 1;
 
   align-items: center;
 `;
@@ -80,7 +83,7 @@ export const ServiceInfoText = styled.Text<IServiceNameProps>`
 /** Confirm Container */
 
 export const ConfirmContainer = styled.View`
-  margin: 20px 25px 0;
+  margin-top: 10px;
 
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.7);

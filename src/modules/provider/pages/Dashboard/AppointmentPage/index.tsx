@@ -40,15 +40,14 @@ const AppointmentPage: React.FC = () => {
 
   const [modalVisible, setModalVisible] = useState(false);
 
-  const handleRemoveAdditional = useCallback(
-    async (description: string) => {
+  const handleUpdateAdditional = useCallback(
+    async (description: string, amount: number) => {
       try {
-        const response = await api.delete(
+        const response = await api.put(
           `appointments/additional/${appointment.id}`,
           {
-            params: {
-              description,
-            },
+            description,
+            amount,
           },
         );
 
@@ -111,23 +110,39 @@ const AppointmentPage: React.FC = () => {
                   {appointment.additionals.services.map(service => (
                     <AdditionalRowContainer key={service.description}>
                       <AdditionalContainerText>
-                        R$ {service.quantity * service.value}
+                        R$ {(service.quantity * service.value).toFixed(2)}
                       </AdditionalContainerText>
                     </AdditionalRowContainer>
                   ))}
                 </AdditionalContainer>
 
                 <AdditionalContainer>
-                  <AdditionalMainText>-</AdditionalMainText>
+                  <AdditionalMainText />
 
                   {appointment.additionals.services.map(service => (
                     <AdditionalRowContainer key={service.description}>
                       <RemoveAdditionalButton
                         onPress={() =>
-                          handleRemoveAdditional(service.description)
+                          handleUpdateAdditional(service.description, -1)
                         }
                       >
                         <Icon name="minus" size={18} color="red" />
+                      </RemoveAdditionalButton>
+                    </AdditionalRowContainer>
+                  ))}
+                </AdditionalContainer>
+
+                <AdditionalContainer>
+                  <AdditionalMainText />
+
+                  {appointment.additionals.services.map(service => (
+                    <AdditionalRowContainer key={service.description}>
+                      <RemoveAdditionalButton
+                        onPress={() =>
+                          handleUpdateAdditional(service.description, 1)
+                        }
+                      >
+                        <Icon name="plus" size={18} color="green" />
                       </RemoveAdditionalButton>
                     </AdditionalRowContainer>
                   ))}
