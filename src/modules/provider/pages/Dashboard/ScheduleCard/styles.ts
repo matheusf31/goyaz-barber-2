@@ -28,7 +28,6 @@ export const Container = styled.View<IContainerProps>`
     return css``;
   }}
 
-  align-items: center;
   justify-content: center;
 `;
 
@@ -53,17 +52,26 @@ export const ScheduleArrowLeftIcon = styled(FeatherIcon)`
   right: 10px;
 `;
 
+/** Appointment */
 export const AppointmentContainer = styled.View`
   flex-direction: row;
 
-  width: 100%;
   justify-content: space-around;
   align-items: center;
 `;
 
-export const AppointmentInfoContainer = styled.View`
+export const AppointmentTimeContainer = styled.View`
   flex: 1;
-  margin-left: 100px;
+  align-items: center;
+`;
+
+export const AppointmentTimeText = styled.Text`
+  font-family: 'RobotoSlab-Regular';
+  font-size: 14px;
+`;
+
+export const AppointmentInfoContainer = styled.View`
+  flex: 1.4;
 `;
 
 export const AppointmentInfo = styled.View`
@@ -71,22 +79,19 @@ export const AppointmentInfo = styled.View`
   padding: 2px 0;
 `;
 
-export const AppointmentInfoText = styled.Text`
+export const AppointmentInfoText = styled.Text.attrs({
+  numberOfLines: 1,
+})`
   font-family: 'RobotoSlab-Regular';
   font-size: 14px;
   margin-left: 10px;
-
-  /* color: #fff; */
-`;
-
-export const AppointmentTimeText = styled.Text`
-  font-family: 'RobotoSlab-Regular';
-  font-size: 14px;
-  margin-left: 40px;
-
-  /* color: #fff; */
 `;
 
 export const AppointmentInfoIcon = styled(FeatherIcon)`
   margin-top: 2px;
+`;
+
+export const AppointmentIconContainer = styled.View`
+  flex: 1;
+  align-items: center;
 `;
