@@ -6,6 +6,8 @@ import pt from 'date-fns/locale/pt';
 import { RowMap } from 'react-native-swipe-list-view';
 
 import api from '../../../../shared/services/api';
+import { socket } from '../../../../shared/services/socket';
+
 import { useAuth } from '../../../../shared/hooks/auth';
 
 import Calendar from '../../../../shared/components/Calendar';
@@ -65,6 +67,7 @@ const Dashboard: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState(new Date());
   const [schedules, setSchedules] = useState<ISchedule[]>([]);
   const [loading, setLoading] = useState(false);
+  const [scheduleUpdate, setScheduleUpdate] = useState(false);
 
   const loadSchedule = useCallback(() => {
     api
@@ -76,7 +79,13 @@ const Dashboard: React.FC = () => {
         },
       })
       .then(response => setSchedules(response.data));
-  }, [selectedDay, profile.id]);
+  }, [selectedDay, profile.id, scheduleUpdate]);
+
+  useEffect(() => {
+    socket.on('scheduling-update', (_: unknown) => {
+      setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
+    });
+  }, []);
 
   useEffect(() => {
     if (loading || isFocused) {
