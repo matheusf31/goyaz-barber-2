@@ -68,9 +68,13 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {
+    const deviceId =
+      (await AsyncStorage.getItem('@GoyazBarber:device-id')) || '';
+
     const response = await api.post('sessions', {
       email,
       password,
+      device_id: JSON.parse(deviceId),
     });
 
     const { token } = response.data;
