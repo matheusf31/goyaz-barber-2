@@ -18,7 +18,10 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* goyazbarberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* goyazbarberTests.m */; };
 		2F284E0D26958047BE5591B8 /* libPods-goyazbarber-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AA184FAFB75315332B2040 /* libPods-goyazbarber-tvOSTests.a */; };
+		4B4B1E2FFE0EA2F193B55653 /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0796E7D2E632FCF109047F /* libPods-OneSignalNotificationServiceExtension.a */; };
 		9B1E6CFDB2384E4195892800 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87BCE39CD0AE4C498D902B05 /* RobotoSlab-Medium.ttf */; };
+		ACC201FE24ED665C0050D69A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC201FD24ED665C0050D69A /* NotificationService.swift */; };
+		ACC2020224ED665C0050D69A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C018EF3FFF446BA893BB026E /* libPods-goyazbarber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB262F2E2CE5FD51D9DE7FFF /* libPods-goyazbarber.a */; };
 		ED81201B67332F95FAC8A370 /* libPods-goyazbarber-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF663CF15E1D3705A35EC4C /* libPods-goyazbarber-tvOS.a */; };
 		FC1A6F48055C0B2989F5D721 /* libPods-goyazbarber-goyazbarberTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D77FD9DDAF4E9CCA9A7724D /* libPods-goyazbarber-goyazbarberTests.a */; };
@@ -39,7 +42,28 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "goyazbarber-tvOS";
 		};
+		ACC2020024ED665C0050D69A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACC201FA24ED665C0050D69A;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ACC2020624ED665C0050D69A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ACC2020224ED665C0050D69A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -60,11 +84,19 @@
 		2F71612724697CC242FFEA5B /* Pods-goyazbarber-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-goyazbarber-tvOS/Pods-goyazbarber-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		38AA184FAFB75315332B2040 /* libPods-goyazbarber-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-goyazbarber-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF15D32232F2E3033D0493 /* Pods-goyazbarber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber.release.xcconfig"; path = "Target Support Files/Pods-goyazbarber/Pods-goyazbarber.release.xcconfig"; sourceTree = "<group>"; };
+		5D0796E7D2E632FCF109047F /* libPods-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78758125D468D7F8D34C262D /* Pods-goyazbarber-goyazbarberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber-goyazbarberTests.release.xcconfig"; path = "Target Support Files/Pods-goyazbarber-goyazbarberTests/Pods-goyazbarber-goyazbarberTests.release.xcconfig"; sourceTree = "<group>"; };
-		87BCE39CD0AE4C498D902B05 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
+		87BCE39CD0AE4C498D902B05 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
+		8A57B0882649C4FD488041DA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8CEE15B9B9C9D93385DEAAF3 /* Pods-goyazbarber-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-goyazbarber-tvOSTests/Pods-goyazbarber-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D77FD9DDAF4E9CCA9A7724D /* libPods-goyazbarber-goyazbarberTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-goyazbarber-goyazbarberTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B27F2C47DB924D1186DCF507 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		94AA114A222E8E7EBAEC4093 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		ACB945E424ED68010033262C /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		ACC201F624ED65A60050D69A /* goyazbarber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = goyazbarber.entitlements; path = goyazbarber/goyazbarber.entitlements; sourceTree = "<group>"; };
+		ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC201FD24ED665C0050D69A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		ACC201FF24ED665C0050D69A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B27F2C47DB924D1186DCF507 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		E3C55C372A5A24853415CBE0 /* Pods-goyazbarber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber.debug.xcconfig"; path = "Target Support Files/Pods-goyazbarber/Pods-goyazbarber.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E04FBDB529CFBA9C491BE6 /* Pods-goyazbarber-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber-tvOS.release.xcconfig"; path = "Target Support Files/Pods-goyazbarber-tvOS/Pods-goyazbarber-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		EB262F2E2CE5FD51D9DE7FFF /* libPods-goyazbarber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-goyazbarber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACC201F824ED665C0050D69A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B4B1E2FFE0EA2F193B55653 /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +169,7 @@
 		13B07FAE1A68108700A75B9A /* goyazbarber */ = {
 			isa = PBXGroup;
 			children = (
+				ACC201F624ED65A60050D69A /* goyazbarber.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -149,6 +190,7 @@
 				8D77FD9DDAF4E9CCA9A7724D /* libPods-goyazbarber-goyazbarberTests.a */,
 				2BF663CF15E1D3705A35EC4C /* libPods-goyazbarber-tvOS.a */,
 				38AA184FAFB75315332B2040 /* libPods-goyazbarber-tvOSTests.a */,
+				5D0796E7D2E632FCF109047F /* libPods-OneSignalNotificationServiceExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +208,7 @@
 				13B07FAE1A68108700A75B9A /* goyazbarber */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* goyazbarberTests */,
+				ACC201FC24ED665C0050D69A /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				AA08C4A421D3A0206CBC91C3 /* Pods */,
@@ -183,6 +226,7 @@
 				00E356EE1AD99517003FC87E /* goyazbarberTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* goyazbarber-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* goyazbarber-tvOSTests.xctest */,
+				ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,7 +238,6 @@
 				B27F2C47DB924D1186DCF507 /* RobotoSlab-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		AA08C4A421D3A0206CBC91C3 /* Pods */ = {
@@ -208,9 +251,20 @@
 				E6E04FBDB529CFBA9C491BE6 /* Pods-goyazbarber-tvOS.release.xcconfig */,
 				F0551F49F5957B1DAB13D3EB /* Pods-goyazbarber-tvOSTests.debug.xcconfig */,
 				8CEE15B9B9C9D93385DEAAF3 /* Pods-goyazbarber-tvOSTests.release.xcconfig */,
+				94AA114A222E8E7EBAEC4093 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				8A57B0882649C4FD488041DA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ACC201FC24ED665C0050D69A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				ACB945E424ED68010033262C /* OneSignalNotificationServiceExtension.entitlements */,
+				ACC201FD24ED665C0050D69A /* NotificationService.swift */,
+				ACC201FF24ED665C0050D69A /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,10 +301,12 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				D40042D3CC97DE14ADB7AA71 /* [CP] Copy Pods Resources */,
+				ACC2020624ED665C0050D69A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ACC2020124ED665C0050D69A /* PBXTargetDependency */,
 			);
 			name = goyazbarber;
 			productName = goyazbarber;
@@ -296,19 +352,39 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* goyazbarber-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ACC201FA24ED665C0050D69A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC2020324ED665C0050D69A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				35F7FF36B5A4530E44674897 /* [CP] Check Pods Manifest.lock */,
+				ACC201F724ED665C0050D69A /* Sources */,
+				ACC201F824ED665C0050D69A /* Frameworks */,
+				ACC201F924ED665C0050D69A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = L6VRTVS3NE;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -319,6 +395,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+					ACC201FA24ED665C0050D69A = {
+						CreatedOnToolsVersion = 11.6;
+						DevelopmentTeam = L6VRTVS3NE;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -339,6 +420,7 @@
 				00E356ED1AD99517003FC87E /* goyazbarberTests */,
 				2D02E47A1E0B4A5D006451C7 /* goyazbarber-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* goyazbarber-tvOSTests */,
+				ACC201FA24ED665C0050D69A /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -371,6 +453,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC201F924ED665C0050D69A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,6 +543,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-goyazbarber-goyazbarberTests/Pods-goyazbarber-goyazbarberTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35F7FF36B5A4530E44674897 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		55F3DCE526FDD727138A2850 /* [CP] Check Pods Manifest.lock */ = {
@@ -667,6 +778,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACC201F724ED665C0050D69A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC201FE24ED665C0050D69A /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -679,6 +798,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* goyazbarber-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		ACC2020124ED665C0050D69A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACC201FA24ED665C0050D69A /* OneSignalNotificationServiceExtension */;
+			targetProxy = ACC2020024ED665C0050D69A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -699,6 +823,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03EB35AD2C4AFD85E3F54288 /* Pods-goyazbarber-goyazbarberTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -722,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78758125D468D7F8D34C262D /* Pods-goyazbarber-goyazbarberTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = goyazbarberTests/Info.plist;
@@ -742,9 +868,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3C55C372A5A24853415CBE0 /* Pods-goyazbarber.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = goyazbarber/goyazbarber.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6VRTVS3NE;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -769,9 +898,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39FF15D32232F2E3033D0493 /* Pods-goyazbarber.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = goyazbarber/goyazbarber.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6VRTVS3NE;
 				INFOPLIST_FILE = goyazbarber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1009,6 +1141,65 @@
 			};
 			name = Release;
 		};
+		ACC2020424ED665C0050D69A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AA114A222E8E7EBAEC4093 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = L6VRTVS3NE;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.goyazbarber.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACC2020524ED665C0050D69A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A57B0882649C4FD488041DA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L6VRTVS3NE;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.goyazbarber.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1053,6 +1244,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACC2020324ED665C0050D69A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC2020424ED665C0050D69A /* Debug */,
+				ACC2020524ED665C0050D69A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
