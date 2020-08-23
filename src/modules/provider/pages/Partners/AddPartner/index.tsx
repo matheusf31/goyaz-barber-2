@@ -22,14 +22,14 @@ import getValidationErrors from '../../../../../shared/utils/getValidationErrors
 
 import { Container, Title } from './styles';
 
-interface IAddPartinerFormData {
+interface IAddPartnerFormData {
   name: string;
   phone: string;
   email: string;
   password: string;
 }
 
-const AddPartiner: React.FC = () => {
+const AddPartner: React.FC = () => {
   const navigation = useNavigation();
 
   const formRef = useRef<FormHandles>(null);
@@ -37,8 +37,8 @@ const AddPartiner: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const handleAddPartiner = useCallback(
-    async (data: IAddPartinerFormData) => {
+  const handleAddPartner = useCallback(
+    async (data: IAddPartnerFormData) => {
       try {
         formRef.current?.setErrors({});
 
@@ -101,7 +101,7 @@ const AddPartiner: React.FC = () => {
               <Title>Criar conta do parceiro</Title>
             </View>
 
-            <Form ref={formRef} onSubmit={handleAddPartiner}>
+            <Form ref={formRef} onSubmit={handleAddPartner}>
               <Input
                 autoCapitalize="words"
                 name="name"
@@ -155,4 +155,4 @@ const AddPartiner: React.FC = () => {
   );
 };
 
-export default AddPartiner;
+export default AddPartner;

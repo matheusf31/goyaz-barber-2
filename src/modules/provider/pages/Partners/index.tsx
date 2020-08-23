@@ -7,25 +7,25 @@ import api from '../../../../shared/services/api';
 
 import Background from '../../../../shared/components/Background';
 
-import PartinerCard from './PartinerCard';
+import PartnerCard from './PartnerCard';
 
-import { Container, Title, PartinerList, AddPartinerButton } from './styles';
+import { Container, Title, AddPartnerButton } from './styles';
 
-export interface IPartiners {
+export interface IPartners {
   id: string;
   name: string;
   avatar_url: string;
 }
 
-const Partiners: React.FC = () => {
-  const [partiners, setPartiners] = useState<IPartiners[]>([]);
+const Partners: React.FC = () => {
+  const [partners, setPartners] = useState<IPartners[]>([]);
 
   const navigation = useNavigation();
   const isFocused = useIsFocused();
 
   useEffect(() => {
     if (isFocused) {
-      api.get('providers').then(response => setPartiners(response.data));
+      api.get('providers').then(response => setPartners(response.data));
     }
   }, [isFocused]);
 
@@ -35,21 +35,21 @@ const Partiners: React.FC = () => {
         <Container contentContainerStyle={{ paddingBottom: 200 }}>
           <Title>Parceiros</Title>
 
-          {partiners.map(partiner => (
-            <PartinerCard
-              key={partiner.id}
-              partiner={partiner}
-              onPartinerChange={setPartiners}
+          {partners.map(partner => (
+            <PartnerCard
+              key={partner.id}
+              partner={partner}
+              onPartnerChange={setPartners}
             />
           ))}
 
-          <AddPartinerButton onPress={() => navigation.navigate('AddPartiner')}>
+          <AddPartnerButton onPress={() => navigation.navigate('AddPartner')}>
             <Icon name="plus-circle" size={36} color="#ff9000" />
-          </AddPartinerButton>
+          </AddPartnerButton>
         </Container>
       </SafeAreaView>
     </Background>
   );
 };
 
-export default Partiners;
+export default Partners;

@@ -6,13 +6,13 @@ import InfosCard from '../../../components/InfosCards';
 
 import { Container } from './styles';
 
-interface IPartinersInfo {
+interface IPartnersInfo {
   provider_id: string;
 }
 
-const PartinersInfo: React.FC<IPartinersInfo> = () => {
+const PartnersInfo: React.FC<IPartnersInfo> = () => {
   const route = useRoute();
-  const routeParams = route.params as IPartinersInfo;
+  const routeParams = route.params as IPartnersInfo;
 
   return (
     <Background>
@@ -23,4 +23,4 @@ const PartinersInfo: React.FC<IPartinersInfo> = () => {
   );
 };
 
-export default PartinersInfo;
+export default PartnersInfo;
