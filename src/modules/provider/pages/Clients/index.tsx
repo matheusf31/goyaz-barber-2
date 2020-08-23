@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
+import { useAuth } from '../../../../shared/hooks/auth';
 import api from '../../../../shared/services/api';
 
 import Background from '../../../../shared/components/Background';
@@ -17,9 +17,12 @@ export interface IClients {
   phone: string;
   avatar_url: string;
   banned: boolean;
+  concludedAppointments: number;
 }
 
 const Clients: React.FC = () => {
+  const { profile } = useAuth();
+
   const [clients, setClients] = useState<IClients[]>([]);
   const [textFilter, setTextFilter] = useState<string>('');
 
@@ -27,9 +30,11 @@ const Clients: React.FC = () => {
 
   useEffect(() => {
     if (isFocused) {
-      api.get('users').then(response => setClients(response.data));
+      api
+        .get(`users/${profile.id}`)
+        .then(response => setClients(response.data));
     }
-  }, [isFocused]);
+  }, [isFocused, profile.id]);
 
   return (
     <Background>

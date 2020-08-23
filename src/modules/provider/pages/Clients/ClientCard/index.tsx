@@ -80,10 +80,11 @@ const ClientCard: React.FC<IClientCardProps> = ({
 
             <ClientInfoContainer>
               <ClientName>{client.name}</ClientName>
-
               <ClientGenericText>{client.email}</ClientGenericText>
-
               <ClientGenericText>{client.phone}</ClientGenericText>
+              <ClientGenericText>
+                agendamentos concluídos: {client.concludedAppointments}
+              </ClientGenericText>
             </ClientInfoContainer>
 
             {client.banned ? (
