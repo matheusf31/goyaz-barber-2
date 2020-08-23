@@ -70,15 +70,23 @@ const Dashboard: React.FC = () => {
   const [scheduleUpdate, setScheduleUpdate] = useState(false);
 
   const loadSchedule = useCallback(() => {
-    api
-      .get(`providers/day-availability/${profile.id}`, {
-        params: {
-          day: selectedDay.getDate(),
-          month: selectedDay.getMonth() + 1,
-          year: selectedDay.getFullYear(),
-        },
-      })
-      .then(response => setSchedules(response.data));
+    let mounted = true;
+
+    if (mounted) {
+      api
+        .get(`providers/day-availability/${profile.id}`, {
+          params: {
+            day: selectedDay.getDate(),
+            month: selectedDay.getMonth() + 1,
+            year: selectedDay.getFullYear(),
+          },
+        })
+        .then(response => setSchedules(response.data));
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, [selectedDay, profile.id, scheduleUpdate]);
 
   useEffect(() => {

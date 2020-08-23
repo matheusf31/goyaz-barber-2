@@ -30,9 +30,7 @@ const Clients: React.FC = () => {
 
   useEffect(() => {
     if (isFocused) {
-      api
-        .get(`users/${profile.id}`)
-        .then(response => setClients(response.data));
+      api.get(`users`).then(response => setClients(response.data));
     }
   }, [isFocused, profile.id]);
 

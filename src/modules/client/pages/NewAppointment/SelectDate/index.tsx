@@ -64,18 +64,26 @@ const SelectDate: React.FC = () => {
   }, []);
 
   const loadSchedule = useCallback(async () => {
-    const response = await api.get(
-      `providers/day-availability/${selectedProvider}`,
-      {
-        params: {
-          year: selectedDay.getFullYear(),
-          month: selectedDay.getMonth() + 1,
-          day: selectedDay.getDate(),
-        },
-      },
-    );
+    let mounted = true;
 
-    setAvailableHours(response.data);
+    if (mounted) {
+      const response = await api.get(
+        `providers/day-availability/${selectedProvider}`,
+        {
+          params: {
+            year: selectedDay.getFullYear(),
+            month: selectedDay.getMonth() + 1,
+            day: selectedDay.getDate(),
+          },
+        },
+      );
+
+      setAvailableHours(response.data);
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, [selectedDay, selectedProvider, scheduleUpdate]);
 
   useEffect(() => {

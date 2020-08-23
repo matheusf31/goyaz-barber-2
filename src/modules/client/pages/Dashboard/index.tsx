@@ -73,11 +73,11 @@ const Dashboard: React.FC = () => {
   const handleCancelAppointment = useCallback(
     async (appointment_id: string) => {
       try {
-        await api.patch(`appointments/user/cancel/${appointment_id}`);
-
         setAppointments(prevState =>
           prevState.filter(e => e.id !== appointment_id),
         );
+
+        await api.patch(`appointments/user/cancel/${appointment_id}`);
       } catch (err) {
         Alert.alert('Erro ao cancelar!', err.response.data.message);
       }
