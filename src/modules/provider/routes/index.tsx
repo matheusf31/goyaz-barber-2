@@ -1,13 +1,14 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import Icon from 'react-native-vector-icons/Feather';
+
+import { useAuth } from '../../../shared/hooks/auth';
 
 import Clients from '../pages/Clients';
 import AppointmentsInfo from '../pages/AppointmentsInfo';
 import Profile from '../../../shared/pages/Profile';
-import PartinersRoutes from './partiners.routes';
+import PartnersRoutes from './partners.routes';
 import DashboardRoutes from './dashboard.routes';
 
 interface ITabBarIcon {
@@ -51,7 +52,7 @@ const profileOptions = {
   ),
 };
 
-const partinersRoutesOptions = {
+const partnersRoutesOptions = {
   tabBarLabel: 'Parceiros',
   tabBarIcon: ({ focused }: ITabBarIcon) => (
     <Icon name="user-check" size={20} color={focused ? '#ff9000' : '#fff'} />
@@ -65,26 +66,32 @@ const appointmentsInfoOptions = {
   ),
 };
 
-const ProviderRoutes: React.FC = () => (
-  <Tab.Navigator tabBarOptions={tabBarOptions}>
-    <Tab.Screen
-      name="DashboardRoutes"
-      component={DashboardRoutes}
-      options={dashboardRoutesOptions}
-    />
-    <Tab.Screen
-      name="AppointmentsInfo"
-      component={AppointmentsInfo}
-      options={appointmentsInfoOptions}
-    />
-    <Tab.Screen name="Clients" component={Clients} options={clientsOptions} />
-    <Tab.Screen
-      name="PartinersRoutes"
-      component={PartinersRoutes}
-      options={partinersRoutesOptions}
-    />
-    <Tab.Screen name="Perfil" component={Profile} options={profileOptions} />
-  </Tab.Navigator>
-);
+const ProviderRoutes: React.FC = () => {
+  const { profile } = useAuth();
+
+  return (
+    <Tab.Navigator tabBarOptions={tabBarOptions}>
+      <Tab.Screen
+        name="DashboardRoutes"
+        component={DashboardRoutes}
+        options={dashboardRoutesOptions}
+      />
+      <Tab.Screen
+        name="AppointmentsInfo"
+        component={AppointmentsInfo}
+        options={appointmentsInfoOptions}
+      />
+      <Tab.Screen name="Clients" component={Clients} options={clientsOptions} />
+      {profile.admin && (
+        <Tab.Screen
+          name="PartnersRoutes"
+          component={PartnersRoutes}
+          options={partnersRoutesOptions}
+        />
+      )}
+      <Tab.Screen name="Perfil" component={Profile} options={profileOptions} />
+    </Tab.Navigator>
+  );
+};
 
 export default ProviderRoutes;
