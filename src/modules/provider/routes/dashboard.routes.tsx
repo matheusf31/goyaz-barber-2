@@ -11,18 +11,18 @@ import AppointmentPage from '../pages/Dashboard/AppointmentPage';
 
 const Stack = createStackNavigator();
 
-const stackPartinersOptions = {
+const stackPartnersOptions = {
   headerTintColor: '#fff',
   cardStyle: {
     backgroundColor: 'black',
   },
 };
 
-const Partiners: React.FC = () => {
+const Partners: React.FC = () => {
   const navigation = useNavigation();
 
   return (
-    <Stack.Navigator screenOptions={stackPartinersOptions} headerMode="screen">
+    <Stack.Navigator screenOptions={stackPartnersOptions} headerMode="screen">
       <Stack.Screen
         name="Dashboard"
         component={Dashboard}
@@ -98,4 +98,4 @@ const Partiners: React.FC = () => {
   );
 };
 
-export default Partiners;
+export default Partners;
