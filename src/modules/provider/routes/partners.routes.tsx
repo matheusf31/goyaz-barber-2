@@ -5,42 +5,42 @@ import { useNavigation } from '@react-navigation/native';
 
 import Icon from 'react-native-vector-icons/Feather';
 
-import PartinersList from '../pages/Partiners';
-import PartinersInfo from '../pages/Partiners/PartinersInfo';
-import AddPartiner from '../pages/Partiners/AddPartiner';
+import PartnersList from '../pages/Partners';
+import PartnersInfo from '../pages/Partners/PartnersInfo';
+import AddPartner from '../pages/Partners/AddPartner';
 
 const Stack = createStackNavigator();
 
-const stackPartinersOptions = {
+const stackPartnersOptions = {
   headerTintColor: '#fff',
   cardStyle: {
     backgroundColor: 'black',
   },
 };
 
-const Partiners: React.FC = () => {
+const Partners: React.FC = () => {
   const navigation = useNavigation();
 
   return (
-    <Stack.Navigator screenOptions={stackPartinersOptions} headerMode="screen">
+    <Stack.Navigator screenOptions={stackPartnersOptions} headerMode="screen">
       <Stack.Screen
-        name="PartinersList"
-        component={PartinersList}
+        name="PartnersList"
+        component={PartnersList}
         options={{
           headerShown: false,
         }}
       />
 
       <Stack.Screen
-        name="PartinersInfo"
-        component={PartinersInfo}
+        name="PartnersInfo"
+        component={PartnersInfo}
         options={{
           title: 'Caixa do parceiro',
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('PartinersList');
+                navigation.navigate('PartnersList');
               }}
             >
               <Icon name="chevron-left" size={20} color="#fff" />
@@ -64,15 +64,15 @@ const Partiners: React.FC = () => {
       />
 
       <Stack.Screen
-        name="AddPartiner"
-        component={AddPartiner}
+        name="AddPartner"
+        component={AddPartner}
         options={{
           title: 'Adicionar parceiro',
           headerTitleAlign: 'center',
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('PartinersList');
+                navigation.navigate('PartnersList');
               }}
             >
               <Icon name="chevron-left" size={20} color="#fff" />
@@ -98,4 +98,4 @@ const Partiners: React.FC = () => {
   );
 };
 
-export default Partiners;
+export default Partners;
