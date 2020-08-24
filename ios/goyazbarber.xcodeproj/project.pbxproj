@@ -22,7 +22,6 @@
 		9B1E6CFDB2384E4195892800 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87BCE39CD0AE4C498D902B05 /* RobotoSlab-Medium.ttf */; };
 		ACC201FE24ED665C0050D69A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC201FD24ED665C0050D69A /* NotificationService.swift */; };
 		ACC2020224ED665C0050D69A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C018EF3FFF446BA893BB026E /* libPods-goyazbarber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB262F2E2CE5FD51D9DE7FFF /* libPods-goyazbarber.a */; };
 		ED81201B67332F95FAC8A370 /* libPods-goyazbarber-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF663CF15E1D3705A35EC4C /* libPods-goyazbarber-tvOS.a */; };
 		FC1A6F48055C0B2989F5D721 /* libPods-goyazbarber-goyazbarberTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D77FD9DDAF4E9CCA9A7724D /* libPods-goyazbarber-goyazbarberTests.a */; };
 /* End PBXBuildFile section */
@@ -71,7 +70,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* goyazbarberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goyazbarberTests.m; sourceTree = "<group>"; };
 		03EB35AD2C4AFD85E3F54288 /* Pods-goyazbarber-goyazbarberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goyazbarber-goyazbarberTests.debug.xcconfig"; path = "Target Support Files/Pods-goyazbarber-goyazbarberTests/Pods-goyazbarber-goyazbarberTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* goyazbarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goyazbarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Goyaz Barber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goyaz Barber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = goyazbarber/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = goyazbarber/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -118,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C018EF3FFF446BA893BB026E /* libPods-goyazbarber.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +220,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* goyazbarber.app */,
+				13B07F961A680F5B00A75B9A /* Goyaz Barber.app */,
 				00E356EE1AD99517003FC87E /* goyazbarberTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* goyazbarber-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* goyazbarber-tvOSTests.xctest */,
@@ -310,7 +308,7 @@
 			);
 			name = goyazbarber;
 			productName = goyazbarber;
-			productReference = 13B07F961A680F5B00A75B9A /* goyazbarber.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Goyaz Barber.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* goyazbarber-tvOS */ = {
@@ -886,8 +884,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = goyazbarber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecteu.goyazbarber;
+				PRODUCT_NAME = "Goyaz Barber";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -911,8 +909,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = goyazbarber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecteu.goyazbarber;
+				PRODUCT_NAME = "Goyaz Barber";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1161,7 +1159,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.goyazbarber.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecteu.goyazbarber.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1191,7 +1189,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.goyazbarber.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecteu.goyazbarber.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

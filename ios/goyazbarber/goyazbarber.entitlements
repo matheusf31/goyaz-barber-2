@@ -6,7 +6,8 @@
 	<string>development</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.org.reactjs.native.example.goyazbarber.onesignal</string>
+		<string>group.com.tecteu.goyazbarber.onesignal</string>
+		<string>group.CY-99E4CFBA-2953-11E7-89C4-5FEB11807D44.lolwtf</string>
 	</array>
 </dict>
 </plist>
