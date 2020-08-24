@@ -17,11 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -38,7 +40,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>It may be necessary to use the user's location if he takes a photo using the functionality of the application itself, as the location is contained in the photo information.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>It may be necessary to use the user's location if he takes a photo using the functionality of the application itself, as the location is contained in the photo information.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>I need to access the user's photo gallery so that he can put a photo as his profile photo in the application</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>RobotoSlab-Medium.ttf</string>
@@ -62,8 +68,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
