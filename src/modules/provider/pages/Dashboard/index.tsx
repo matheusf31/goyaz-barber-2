@@ -90,9 +90,17 @@ const Dashboard: React.FC = () => {
   }, [selectedDay, profile.id, scheduleUpdate]);
 
   useEffect(() => {
-    socket.on('scheduling-update', (_: unknown) => {
-      setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
-    });
+    let mounted = true;
+
+    if (mounted) {
+      socket.on('scheduling-update', (_: unknown) => {
+        setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
+      });
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   useEffect(() => {
