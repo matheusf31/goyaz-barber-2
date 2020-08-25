@@ -36,6 +36,8 @@ export const ClientAvatar = styled.Image<IClientAvatar>`
 
 export const ClientInfoContainer = styled.View`
   width: 200px;
+
+  margin-left: 20px;
 `;
 
 export const ClientName = styled.Text`

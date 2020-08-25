@@ -60,7 +60,15 @@ const SelectDate: React.FC = () => {
   const [scheduleUpdate, setScheduleUpdate] = useState(false);
 
   useEffect(() => {
-    api.get('providers').then(response => setProviders(response.data));
+    let mounted = true;
+
+    if (mounted) {
+      api.get('providers').then(response => setProviders(response.data));
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const loadSchedule = useCallback(async () => {
@@ -91,9 +99,17 @@ const SelectDate: React.FC = () => {
   }, [loadSchedule]);
 
   useEffect(() => {
-    socket.on('scheduling-update', (_: unknown) => {
-      setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
-    });
+    let mounted = true;
+
+    if (mounted) {
+      socket.on('scheduling-update', (_: unknown) => {
+        setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
+      });
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const handleSelectProvider = useCallback((providerId: string) => {

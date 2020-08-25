@@ -197,11 +197,6 @@ const CreateAppointment: React.FC = () => {
                 }}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item: service }) => (
-                  // <ServiceCard
-                  //   service={service}
-                  //   selectedService={selectedService}
-                  //   onChangeSelectedService={setSelectedService}
-                  // />
                   <ServiceContainer
                     selected={selectedService === service}
                     onPress={() => setSelectedService(service)}

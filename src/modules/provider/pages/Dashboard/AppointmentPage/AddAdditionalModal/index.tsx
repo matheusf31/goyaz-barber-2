@@ -6,7 +6,6 @@ import {
   TextInput,
 } from 'react-native';
 import Modal from 'react-native-modal';
-import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import api from '../../../../../../shared/services/api';
@@ -37,8 +36,6 @@ const AddAdditionalModal: React.FC<IAddAdditionalModalProps> = ({
   onModalChange,
   onAppointmentUpdate,
 }) => {
-  const navigation = useNavigation();
-
   const [description, setDescription] = useState('');
   const [value, setValue] = useState(0);
   const [quantity, setQuantity] = useState(0);
@@ -109,7 +106,7 @@ const AddAdditionalModal: React.FC<IAddAdditionalModalProps> = ({
                 autoCapitalize="none"
                 placeholder="Valor"
                 placeholderTextColor="#999"
-                keyboardType="numeric"
+                keyboardType="numbers-and-punctuation"
                 onChangeText={text => setValue(Number(text))}
                 returnKeyType="next"
                 onSubmitEditing={() => quantityRef.current?.focus()}
