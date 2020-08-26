@@ -22,6 +22,7 @@
 		9B1E6CFDB2384E4195892800 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87BCE39CD0AE4C498D902B05 /* RobotoSlab-Medium.ttf */; };
 		ACC201FE24ED665C0050D69A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC201FD24ED665C0050D69A /* NotificationService.swift */; };
 		ACC2020224ED665C0050D69A /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ACC201FB24ED665C0050D69A /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB280D9E8F50565B162B878A /* libPods-goyazbarber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB262F2E2CE5FD51D9DE7FFF /* libPods-goyazbarber.a */; };
 		ED81201B67332F95FAC8A370 /* libPods-goyazbarber-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF663CF15E1D3705A35EC4C /* libPods-goyazbarber-tvOS.a */; };
 		FC1A6F48055C0B2989F5D721 /* libPods-goyazbarber-goyazbarberTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D77FD9DDAF4E9CCA9A7724D /* libPods-goyazbarber-goyazbarberTests.a */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB280D9E8F50565B162B878A /* libPods-goyazbarber.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

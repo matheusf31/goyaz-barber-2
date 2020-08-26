@@ -11,6 +11,7 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import ImagePicker from 'react-native-image-picker';
+import ImageResizer from 'react-native-image-resizer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { useAuth } from '../../hooks/auth';
@@ -124,7 +125,7 @@ const Profile: React.FC = () => {
       {
         title: 'Selecione um avatar',
         cancelButtonTitle: 'Cancelar',
-        takePhotoButtonTitle: 'Usar câmera',
+        takePhotoButtonTitle: 'Tirar foto',
         chooseFromLibraryButtonTitle: 'Escolha da galeria',
       },
       response => {
@@ -133,7 +134,6 @@ const Profile: React.FC = () => {
         }
 
         if (response.error) {
-          // eslint-disable-next-line no-console
           console.log('ImagePicker Error: ', response.error);
 
           Alert.alert('Erro ao atualizar seu avatar.');
@@ -143,21 +143,35 @@ const Profile: React.FC = () => {
 
         const data = new FormData();
 
-        data.append('avatar', {
-          uri: response.uri,
-          type: 'image/jpeg',
-          name: `${profile.id}.jpg`,
-        });
+        ImageResizer.createResizedImage(response.uri, 240, 240, 'JPEG', 100)
+          .then(res => {
+            data.append('avatar', {
+              uri: res.uri,
+              type: 'image/jpeg',
+              name: `${profile.id}.jpg`,
+            });
 
-        api
-          .patch('/users/avatar', data)
-          .then(apiResponse => {
-            updateUser(apiResponse.data);
-            Alert.alert('Foto do perfil atualizada com sucesso.');
+            api
+              .patch('/users/avatar', data)
+              .then(apiResponse => {
+                updateUser(apiResponse.data);
+                Alert.alert('Foto do perfil atualizada com sucesso.');
+              })
+              .catch(err => {
+                Alert.alert('Erro ao atualizar a foto de perfil.');
+                console.log(err.response.data);
+              });
           })
           .catch(err => {
-            Alert.alert('Erro ao atualizar a foto de perfil.');
+            Alert.alert('Erro ao fazer o resize do seu avatar.');
+            console.log(err);
           });
+
+        // data.append('avatar', {
+        //   uri: response.uri,
+        //   type: 'image/jpeg',
+        //   name: `${profile.id}.jpg`,
+        // });
       },
     );
   }, [updateUser, profile.id]);

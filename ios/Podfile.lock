@@ -236,6 +236,8 @@ PODS:
   - React-jsinspector (0.62.2)
   - react-native-image-picker (2.3.1):
     - React
+  - react-native-image-resizer (1.2.6):
+    - React
   - react-native-onesignal (3.9.0):
     - OneSignal (= 2.14.3)
     - React (< 1.0.0, >= 0.13.0)
@@ -358,6 +360,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-image-resizer (from `../node_modules/react-native-image-resizer`)
   - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -428,6 +431,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-image-resizer:
+    :path: "../node_modules/react-native-image-resizer"
   react-native-onesignal:
     :path: "../node_modules/react-native-onesignal"
   react-native-safe-area-context:
@@ -499,6 +504,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
   react-native-image-picker: 6a850c41f57f0848d918c2a77aedd7aa272ffa30
+  react-native-image-resizer: cbfc171bad1c33a5b146281873f9e88c54439d79
   react-native-onesignal: 3cd5b9b5a2d151698cab987a364f4cbd51552508
   react-native-safe-area-context: 45e98227f3d65b31d384a5d0950aec4bf73a884c
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
