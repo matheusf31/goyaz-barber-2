@@ -60,55 +60,30 @@ const SelectDate: React.FC = () => {
   const [scheduleUpdate, setScheduleUpdate] = useState(false);
 
   useEffect(() => {
-    let mounted = true;
-
-    if (mounted) {
-      api.get('providers').then(response => setProviders(response.data));
-    }
-
-    return () => {
-      mounted = false;
-    };
+    api.get('providers').then(response => setProviders(response.data));
   }, []);
 
-  const loadSchedule = useCallback(async () => {
-    let mounted = true;
-
-    if (mounted) {
-      const response = await api.get(
-        `providers/day-availability/${selectedProvider}`,
-        {
-          params: {
-            year: selectedDay.getFullYear(),
-            month: selectedDay.getMonth() + 1,
-            day: selectedDay.getDate(),
-          },
+  useEffect(() => {
+    api
+      .get(`providers/day-availability/${selectedProvider}`, {
+        params: {
+          year: selectedDay.getFullYear(),
+          month: selectedDay.getMonth() + 1,
+          day: selectedDay.getDate(),
         },
-      );
-
-      setAvailableHours(response.data);
-    }
-
-    return () => {
-      mounted = false;
-    };
+      })
+      .then(response => setAvailableHours(response.data));
   }, [selectedDay, selectedProvider, scheduleUpdate]);
 
   useEffect(() => {
-    loadSchedule();
-  }, [loadSchedule]);
+    socket.on('scheduling-update', (_: unknown) => {
+      setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
 
-  useEffect(() => {
-    let mounted = true;
-
-    if (mounted) {
-      socket.on('scheduling-update', (_: unknown) => {
-        setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
-      });
-    }
+      console.log('socket on SELECTDATE');
+    });
 
     return () => {
-      mounted = false;
+      socket.off('scheduling-update');
     };
   }, []);
 

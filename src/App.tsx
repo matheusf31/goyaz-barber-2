@@ -27,19 +27,19 @@ class App extends Component {
 
   // disparado quando recebermos e o app estiver aberto
   onReceived = (data: unknown): void => {
-    console.log('#ONRECEIVED - data => ', data);
+    // console.log('#ONRECEIVED - data => ', data);
   };
 
   // executa quando o usuário clica em uma notificação quando o app está fechado (pode mandar ele pra alguma tela)
   onOpened = (notification: unknown): void => {
-    console.log('#ONOPENED - notification => ', notification);
+    // console.log('#ONOPENED - notification => ', notification);
   };
 
   // usado para relacionar um user logado com o id de notificação
   // enviar notificação pra um usuário específico
   // armazenar no local storage -> envia pro server e associa na tabela de user
   onIds = async (id: { pushToken: string; userId: string }): Promise<void> => {
-    console.log('#ONIDS - id => ', id);
+    // console.log('#ONIDS - id => ', id);
 
     await AsyncStorage.setItem(
       '@GoyazBarber:device-id',

@@ -90,7 +90,7 @@ const SelectServiceAndConfirm: React.FC = () => {
     ];
   }, []);
 
-  const formatedDate = useMemo(() => {
+  const formattedDate = useMemo(() => {
     return format(parseISO(date), "dd 'de' MMMM',' cccc 'às' kk:mm", {
       locale: pt,
     });
@@ -105,6 +105,8 @@ const SelectServiceAndConfirm: React.FC = () => {
       });
 
       Alert.alert('Agendamento criado com sucesso!');
+
+      console.log('LOGO ANTES DE NAVEGAR');
 
       navigation.reset({
         routes: [{ name: 'Dashboard' }],
@@ -193,7 +195,7 @@ const SelectServiceAndConfirm: React.FC = () => {
 
                 <DetailsContainer>
                   <Icon name="clock" size={16} color="#ff9000" />
-                  <DetailsText>{formatedDate}</DetailsText>
+                  <DetailsText>{formattedDate}</DetailsText>
                 </DetailsContainer>
               </ConfirmContainerDetails>
             </ConfirmContainerInfo>

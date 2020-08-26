@@ -5,7 +5,7 @@ export const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: center;
 
-  margin: 90px 30px 140px 30px;
+  margin: 40px 30px 140px 30px;
 `;
 
 export const UserAvatarButton = styled.TouchableOpacity``;
