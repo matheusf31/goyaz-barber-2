@@ -106,8 +106,6 @@ const SelectServiceAndConfirm: React.FC = () => {
 
       Alert.alert('Agendamento criado com sucesso!');
 
-      console.log('LOGO ANTES DE NAVEGAR');
-
       navigation.reset({
         routes: [{ name: 'Dashboard' }],
         index: 0,

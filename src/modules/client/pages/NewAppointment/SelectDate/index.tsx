@@ -78,8 +78,6 @@ const SelectDate: React.FC = () => {
   useEffect(() => {
     socket.on('scheduling-update', (_: unknown) => {
       setScheduleUpdate(oldScheduleUpdate => !oldScheduleUpdate);
-
-      console.log('socket on SELECTDATE');
     });
 
     return () => {
