@@ -39,9 +39,9 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>It may be necessary to use the user's location if he takes a photo using the functionality of the application itself, as the location is contained in the photo information.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>It may be necessary to use the user's location if he takes a photo using the functionality of the application itself, as the location is contained in the photo information.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>It may be necessary to use the user's location if he takes a photo using the functionality of the application itself, as the location is contained in the photo information.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>I need to access the user's photo gallery so that he can put a photo as his profile photo in the application</string>
