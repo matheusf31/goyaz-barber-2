@@ -1,4 +1,5 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
+import { Platform } from 'react-native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -6,6 +7,11 @@ export const Container = styled.SafeAreaView`
   justify-content: center;
 
   margin: 40px 30px 140px 30px;
+
+  ${Platform.OS === 'ios' &&
+  css`
+    margin-top: 70px;
+  `}
 `;
 
 export const UserAvatarButton = styled.TouchableOpacity``;
