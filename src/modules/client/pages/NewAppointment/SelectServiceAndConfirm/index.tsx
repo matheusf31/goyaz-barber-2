@@ -192,12 +192,15 @@ const SelectServiceAndConfirm: React.FC = () => {
               </ConfirmContainerDetails>
             </ConfirmContainerInfo>
 
-            <DetailsText style={{ marginTop: 10 }}>
-              Obs.: o serviço custará {selectedService.price} e durará{' '}
-              {selectedService.duration}
+            <DetailsText style={{ marginTop: 5, marginLeft: 20 }}>
+              Obs.: o serviço custará {selectedService.price} e durará
+              aproximadamente {selectedService.duration}
             </DetailsText>
 
-            <CreateAppointmentButton onPress={handleCreateAppointment}>
+            <CreateAppointmentButton
+              activeOpacity={0.9}
+              onPress={handleCreateAppointment}
+            >
               <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
             </CreateAppointmentButton>
           </ConfirmContainer>

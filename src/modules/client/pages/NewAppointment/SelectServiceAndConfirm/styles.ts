@@ -19,7 +19,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   color: #f4ede8;
-  font-size: 20px;
+  font-size: 22px;
   margin: 30px 0px 10px;
 `;
 
@@ -39,10 +39,10 @@ export const ServiceContainer = styled(RectButton)<IServiceContainerProps>`
   border-radius: 10px;
   margin-bottom: 10px;
 
-  margin-right: 8px;
-  margin-left: 8px;
-
   flex: 1;
+
+  margin-right: 5px;
+  margin-left: 5px;
 
   align-items: center;
 `;
@@ -81,18 +81,19 @@ export const ServiceInfoText = styled.Text<IServiceNameProps>`
 `;
 
 /** Confirm Container */
-
 export const ConfirmContainer = styled.View`
-  margin-top: 10px;
+  margin: 0px 5px;
 
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.7);
+  background: #17181d;
 `;
 
 export const ConfirmContainerInfo = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+
+  /* background: red; */
+  padding: 10px 20px;
 `;
 
 export const Avatar = styled.Image`
@@ -101,12 +102,14 @@ export const Avatar = styled.Image`
   border-radius: 40px;
 `;
 
-export const ConfirmContainerDetails = styled.View``;
+export const ConfirmContainerDetails = styled.View`
+  flex: 1;
+`;
 
 export const DetailsContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 10px 15px;
+  padding: 4px 15px;
 `;
 
 export const DetailsName = styled.Text`
@@ -124,10 +127,11 @@ export const DetailsText = styled.Text`
   margin-left: 10px;
 `;
 
-export const CreateAppointmentButton = styled(RectButton)`
+export const CreateAppointmentButton = styled.TouchableOpacity`
   height: 46px;
   background: #ff9000;
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
