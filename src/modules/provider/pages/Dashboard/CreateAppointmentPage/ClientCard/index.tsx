@@ -70,7 +70,7 @@ const ClientCard: React.FC<IClientCardProps> = ({
 
           {selectedClient.id && (
             <RemoveSelectedClientButton onPress={handleRemoveClient}>
-              <Icon name="x" size={26} color="#18171d" />
+              <Icon name="x" size={26} color="#17181d" />
             </RemoveSelectedClientButton>
           )}
         </ClientCardContainer>

@@ -35,7 +35,7 @@ export const DetailsContainer = styled.View`
 export const DetailsText = styled.Text`
   font-family: 'RobotoSlab-Medium';
   font-size: 16px;
-  color: #18171d;
+  color: #17181d;
   margin-left: 10px;
 `;
 
@@ -53,6 +53,6 @@ export const CreateAppointmentButton = styled.TouchableHighlight`
 
 export const CreateAppointmentButtonText = styled.Text`
   font-family: 'RobotoSlab-Medium';
-  color: #18171d;
+  color: #17181d;
   font-size: 16px;
 `;

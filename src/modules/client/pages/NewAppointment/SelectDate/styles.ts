@@ -37,7 +37,7 @@ export const ProvidersList = styled(FlatList as new () => FlatList<IProvider>)`
 `;
 
 export const ProviderContainer = styled(RectButton)<IProviderContainerProps>`
-  background: ${props => (props.selected ? '#ff9000' : '#18171d')};
+  background: ${props => (props.selected ? '#ff9000' : '#17181d')};
   flex-direction: row;
   align-items: center;
   padding: 8px 12px;
@@ -55,7 +55,7 @@ export const ProviderName = styled.Text<IProviderNameProps>`
   margin-left: 12px;
   font-family: 'RobotoSlab-Medium';
   font-size: 16px;
-  color: ${props => (props.selected ? '#18171d' : '#f4ede8')};
+  color: ${props => (props.selected ? '#17181d' : '#f4ede8')};
 `;
 
 export const Schedule = styled.ScrollView`
@@ -89,13 +89,13 @@ export const SectionContent = styled.ScrollView.attrs({
 
 export const HourContainer = styled(RectButton)<IHourContainerProps>`
   padding: 12px 18px;
-  background: ${props => (props.selected ? '#ff9000' : '#18171d')};
+  background: ${props => (props.selected ? '#ff9000' : '#17181d')};
   border-radius: 10px;
   margin-right: 12px;
 `;
 
 export const HourText = styled.Text<IHourTextProps>`
-  color: ${props => (props.selected ? '#18171d' : '#fff')};
+  color: ${props => (props.selected ? '#17181d' : '#fff')};
   font-family: 'RobotoSlab-Regular';
   font-size: 16px;
 `;

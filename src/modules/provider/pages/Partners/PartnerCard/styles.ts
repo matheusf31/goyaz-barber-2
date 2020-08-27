@@ -24,7 +24,7 @@ export const PartnerNameContainer = styled.TouchableOpacity`
 `;
 
 export const PartnerName = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-family: 'RobotoSlab-Medium';
   font-size: 18px;
 `;
@@ -42,7 +42,7 @@ export const DeletePartnerTextContainer = styled.TouchableOpacity`
 `;
 
 export const DeletePartnerText = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-family: 'RobotoSlab-Medium';
   font-size: 18px;
 `;

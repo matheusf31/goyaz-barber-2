@@ -19,7 +19,7 @@ const tabBarOptions = {
   activeTintColor: '#ff9000',
   inactiveTintColor: '#fff',
   style: {
-    backgroundColor: '#18171d',
+    backgroundColor: '#17181d',
     paddingTop: Platform.OS === 'ios' ? 5 : 0,
     height: Platform.OS === 'ios' ? '10.5%' : 60,
   },

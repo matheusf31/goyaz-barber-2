@@ -10,7 +10,7 @@ export const AppointmentCardContainer = styled.View`
   margin: 0 16px 0px 42px;
   padding: 10px 14px;
   border-radius: 10px;
-  background: #18171d;
+  background: #17181d;
 `;
 
 export const InfoContainer = styled.View`

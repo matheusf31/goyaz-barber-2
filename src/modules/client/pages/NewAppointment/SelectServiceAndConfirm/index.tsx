@@ -131,17 +131,11 @@ const SelectServiceAndConfirm: React.FC = () => {
                 onPress={() => handleSelectService(service)}
               >
                 <ServiceName selected={selectedService === service}>
-                  {service.name}
+                  {service.name.charAt(0).toUpperCase() + service.name.slice(1)}
                 </ServiceName>
 
                 <ServiceInfoContainer>
                   <ServiceInfoPriceContainer>
-                    <Icon
-                      name="dollar-sign"
-                      size={12}
-                      color={selectedService === service ? '#18171d' : '#fff'}
-                    />
-
                     <ServiceInfoText selected={selectedService === service}>
                       {service.price}
                     </ServiceInfoText>
@@ -151,7 +145,7 @@ const SelectServiceAndConfirm: React.FC = () => {
                     <Icon
                       name="clock"
                       size={12}
-                      color={selectedService === service ? '#18171d' : '#fff'}
+                      color={selectedService === service ? '#17181d' : '#fff'}
                     />
 
                     <ServiceInfoText selected={selectedService === service}>

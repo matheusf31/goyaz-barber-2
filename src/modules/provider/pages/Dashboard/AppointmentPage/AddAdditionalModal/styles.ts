@@ -18,7 +18,7 @@ export const ModalHeader = styled.View`
 export const ModalText = styled.Text`
   font-family: 'RobotoSlab-Medium';
   font-size: 22px;
-  color: #18171d;
+  color: #17181d;
 `;
 
 export const ModalForm = styled.View`
@@ -30,7 +30,7 @@ export const ModalInputContainer = styled.View`
 
   border-radius: 1px;
   border-bottom-width: 1px;
-  border-bottom-color: #18171d;
+  border-bottom-color: #17181d;
 
   margin: 10px 0 5px;
 
@@ -42,7 +42,7 @@ export const ModalInput = styled.TextInput`
   flex: 1;
   font-size: 15px;
   margin-left: 10px;
-  color: #18171d;
+  color: #17181d;
   font-family: 'RobotoSlab-Regular';
 `;
 
@@ -60,6 +60,6 @@ export const ModalButton = styled.TouchableOpacity`
 export const ModalButtonText = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  color: #18171d;
+  color: #17181d;
   font-family: 'RobotoSlab-Medium';
 `;

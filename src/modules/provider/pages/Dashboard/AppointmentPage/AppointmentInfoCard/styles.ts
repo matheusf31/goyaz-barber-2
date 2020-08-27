@@ -36,7 +36,7 @@ export const DetailsContainer = styled.View`
 export const DetailsText = styled.Text`
   font-family: 'RobotoSlab-Medium';
   font-size: 16px;
-  color: #18171d;
+  color: #17181d;
   margin-left: 10px;
 `;
 
@@ -80,7 +80,7 @@ export const NonConcludedButton = styled.TouchableHighlight.attrs({
 export const ButtonText = styled.Text`
   font-family: 'RobotoSlab-Medium';
   font-size: 16px;
-  color: #18171d;
+  color: #17181d;
 `;
 
 export const ConfirmInfo = styled.View`

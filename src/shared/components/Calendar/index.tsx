@@ -59,7 +59,7 @@ LocaleConfig.locales.pt = {
 LocaleConfig.defaultLocale = 'pt';
 
 const calendarTheme = {
-  calendarBackground: '#18171d',
+  calendarBackground: '#17181d',
   textSectionTitleColor: '#f4ede8',
   todayTextColor: '#ff9000',
   dayTextColor: '#f4ede8',

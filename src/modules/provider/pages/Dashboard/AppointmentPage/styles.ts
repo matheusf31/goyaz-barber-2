@@ -34,7 +34,7 @@ export const AdditionalBodyContainer = styled.View`
 `;
 
 export const AdditionalMainText = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-size: 15px;
   font-family: 'RobotoSlab-Medium';
   align-self: center;
@@ -49,7 +49,7 @@ export const AdditionalRowContainer = styled.View`
 `;
 
 export const AdditionalContainerText = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-size: 14px;
   font-family: 'RobotoSlab-Regular';
 `;

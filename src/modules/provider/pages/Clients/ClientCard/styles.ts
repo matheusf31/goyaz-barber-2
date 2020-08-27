@@ -41,7 +41,7 @@ export const ClientInfoContainer = styled.View`
 `;
 
 export const ClientName = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-size: 18px;
   font-family: 'RobotoSlab-Regular';
 
@@ -49,7 +49,7 @@ export const ClientName = styled.Text`
 `;
 
 export const ClientGenericText = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-size: 12px;
   font-family: 'RobotoSlab-Regular';
   padding: 0 0 5px 0;

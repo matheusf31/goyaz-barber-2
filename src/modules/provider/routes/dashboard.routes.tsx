@@ -47,7 +47,7 @@ const Partners: React.FC = () => {
             </TouchableOpacity>
           ),
           headerStyle: {
-            backgroundColor: '#18171d',
+            backgroundColor: '#17181d',
             shadowOffset: {
               height: 0,
             },
@@ -79,7 +79,7 @@ const Partners: React.FC = () => {
             </TouchableOpacity>
           ),
           headerStyle: {
-            backgroundColor: '#18171d',
+            backgroundColor: '#17181d',
             shadowOffset: {
               height: 0,
             },

@@ -10,12 +10,12 @@ export const Container = styled.View<IContainerProps>`
   width: 100%;
   height: 55px;
   padding: 0 16px;
-  background: #18171d;
+  background: #17181d;
 
   border-radius: 10px;
   margin-bottom: 10px;
   border-width: 2px;
-  border-color: #18171d;
+  border-color: #17181d;
 
   flex-direction: row;
   align-items: center;

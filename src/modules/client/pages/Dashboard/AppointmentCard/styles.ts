@@ -9,7 +9,7 @@ export const AppointmentCardContainer = styled.View`
   padding: 14px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background: #18171d;
+  background: #17181d;
 
   align-items: center;
 `;
@@ -81,7 +81,7 @@ export const Contact = styled.View`
 export const CancelationCardContainer = styled.View`
   margin: 0 16px 0px 36px;
   padding: 20px 20px;
-  background: #18171d;
+  background: #17181d;
   border-radius: 10px;
 
   align-items: center;

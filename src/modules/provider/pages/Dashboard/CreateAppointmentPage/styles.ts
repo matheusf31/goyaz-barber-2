@@ -41,7 +41,7 @@ export const ForeignButtonContainer = styled.TouchableHighlight`
 `;
 
 export const ForeignButtonText = styled.Text`
-  color: #18171d;
+  color: #17181d;
   font-size: 18px;
   font-family: 'RobotoSlab-Regular';
 `;
@@ -83,7 +83,7 @@ export const ServiceContainer = styled(RectButton)<IServiceContainerProps>`
 `;
 
 export const ServiceName = styled.Text<IServiceNameProps>`
-  color: #18171d;
+  color: #17181d;
   font-family: 'RobotoSlab-Regular';
   font-weight: bold;
   font-size: 14px;

@@ -35,7 +35,7 @@ export const ServicesList = styled(
 
 export const ServiceContainer = styled(RectButton)<IServiceContainerProps>`
   padding: 12px 18px;
-  background: ${props => (props.selected ? '#ff9000' : '#18171d')};
+  background: ${props => (props.selected ? '#ff9000' : '#17181d')};
   border-radius: 10px;
   margin-bottom: 10px;
 
@@ -48,7 +48,7 @@ export const ServiceContainer = styled(RectButton)<IServiceContainerProps>`
 `;
 
 export const ServiceName = styled.Text<IServiceNameProps>`
-  color: ${props => (props.selected ? '#18171d' : '#fff')};
+  color: ${props => (props.selected ? '#17181d' : '#fff')};
   font-family: 'RobotoSlab-Regular';
   font-weight: bold;
   font-size: 18px;
@@ -61,22 +61,22 @@ export const ServiceInfoContainer = styled.View`
 
 export const ServiceInfoPriceContainer = styled.View`
   flex-direction: row;
-  margin-right: 15px;
+  margin-right: 10px;
 
   align-items: center;
 `;
 
 export const ServiceInfoDurationContainer = styled.View`
   flex-direction: row;
-  margin-left: 15px;
+  margin-left: 10px;
 
   align-items: center;
 `;
 
 export const ServiceInfoText = styled.Text<IServiceNameProps>`
-  color: ${props => (props.selected ? '#18171d' : '#fff')};
+  color: ${props => (props.selected ? '#17181d' : '#fff')};
   font-family: 'RobotoSlab-Regular';
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 5px;
 `;
 
@@ -135,6 +135,6 @@ export const CreateAppointmentButton = styled(RectButton)`
 
 export const CreateAppointmentButtonText = styled.Text`
   font-family: 'RobotoSlab-Medium';
-  color: #18171d;
+  color: #17181d;
   font-size: 16px;
 `;
