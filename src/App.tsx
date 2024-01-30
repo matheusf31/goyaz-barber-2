@@ -27,7 +27,6 @@ class App extends Component {
 
   // disparado quando recebermos e o app estiver aberto
   onReceived = (data: unknown): void => {
-    // console.log('#ONRECEIVED - data => ', data);
   };
 
   // executa quando o usuário clica em uma notificação quando o app está fechado (pode mandar ele pra alguma tela)
